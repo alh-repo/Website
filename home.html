@@ -1,0 +1,165 @@
+ <?php
+ session_start();
+ ?>
+
+<!--
+// Name:  Adam L. Hennefer
+// Date: 9.25.19 
+// File: home.html
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> MyCSSite-Home </title>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="Adam Hennefer, MyCSSite, home">
+	<meta name="author" content="Adam Hennefer">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<style>
+		<link rel="stylesheet" href="styles.css">
+	</style>
+</head>
+
+<body>
+	<header> 	
+		<img src ="https://cdn-images-1.medium.com/max/1600/1*CaeO7W9pk_4OHG_7nf4-ZA.png " class = "center1">	
+	</header>
+	<!-- Internet Explorer & MS Edge do not support sticky nav bar -->
+	<ul>
+		<link rel="stylesheet" href="styles.css">
+		<li><a class="active" href="#home">Home</a></li>
+		<li><a href="history.html">History</a></li>
+		<li><a href="about.html">About</a></li>
+		<li><a href="partners.html">Partners</a></li>
+		<li><a href="members.php">Members</a></li>
+		<li><a href="restricted.php">Restricted</a></li>
+		<li a class="money" style="float:right"><a href="donate.html">Donate</a></li>
+		<li style="float:right"><a href="login.php">Login</a></li>
+		<li style="float:right"><a href="logout.php">Logout</a></li>
+	</ul>
+	<br>
+	<data>
+		<p>Welcome to My Computer Science Web Site. A project developed by Adam Hennefer
+			while enrolled at California State University East Bay.
+			I chose to make this website because it is simple, functional and adaptable.  
+			It exhibits many common website features.  These features are 
+			briefly summarize within the accordian presented below.  
+			This project represents my initial introduction into web developement. </p>
+		<br>
+		<p><strong>Website Features - Technical Jargon:</strong></p>
+		<button class="accordion">Home Page</button>
+		<div class="panel">
+		<p></p>
+			<ol style="list-style-type:disc;">
+			<li>This sites uses HTML5 code and utilizes semantic tags (e.g., header, section, aside, footer, etc.).</li><br>
+			<li>Styles are generally defined in separate CSS files which use each of the following selectors: element, id, class, and pseudo-class.</li><br>
+			<li>The horizontal navigation bar with links allow the user to traverse the web pages of this site.</li><br>
+			<li>The navigation bar persists at the top of the page when scrolling.</li><br>
+			<li>The accordian feature you are using now gets functionality from JavaScript. </li><br>
+			<li>Each page has a unique title that is represented in the tab of the browser. </li><br>
+			<li>Appropriate meta data is provided in the HMTL code to help identify the page content.</li><br>
+		</ol>
+		</div>
+	
+		<button class="accordion">History Page</button>
+		<div class="panel">
+			<p>The History page features a slideshow.  </p>
+			<ol style="list-style-type:disc;">
+			<li>The images are gathered in an HTML container and use a decent amount of CSS to make them fade during transitions.</li><br>
+			<li>The functionality to change images comes from JavaScript.</li><br>
+			<li>The images were compiled just for demonstation purposes.</li><br>
+			</ol>
+		</div>
+
+		<button class="accordion">About Page</button>
+		<div class="panel">
+		  <p>The About page features an embedded video.</p>
+		  <ol style="list-style-type:disc;">
+		  <li>One of my favorite features of HTML5 is the ability to easily embed video based media without the need for a video player plug-in.</li><br>
+		  <li>Video files can be directly embedded in a video element similiar to the way a picture is embedded, so long as the video is formatted as an mp4, webm or ogg file. </li><br>
+		  <li>The HTML5 video element comes loaded with various attributes which provide additional JavaScript functionality to manipulate playback control.</li><br>
+		  <li>The HTML5 video element also allows for Encrypted Media Extensions which are JavaScript API's for protected content.  More information about EME can be found here https://www.w3.org/TR/encrypted-media/</li><br>
+		  </ol>	
+		</div>
+		
+		<button class="accordion">Partners Page</button>
+		<div class="panel">
+		  <p>The partners page features a thank you message.</p>
+		  <ol style="list-style-type:disc;">
+		  <li>This page runs a script when the gif is double clicked.</li><br>
+		  <li>The script utilizes AJAX (via an XMLHttpRequest object) to access text that is stored in a file.</li><br>
+		  <li>The plain text file is then printed to the web page one character at a time to mimic a typewriter.</li><br>
+		  <li>The script sends its output text to an innerHTML content dividing element which is empty.</li><br>
+		  <li>This appears to split the page as a message is typed.</li><br>
+		  </ol>	
+		</div>
+				
+		<button class="accordion">Members & Login Pages</button>
+		<div class="panel">
+		  <ol style="list-style-type:disc;">
+		  <li>The Members page & the Restricted page will redirect users to the login page if they are not signed in.</li><br>
+		  <li>The Login page and new_users_login page use PHP for the server-side scripting.</li><br>
+		  <li>The PHP scripts connect to an SQL database to authenticate or create a user account.</li><br>
+		  <li>If authenticated, new users recieve email confirmation with their username and password. </li><br>
+		  <li>Email is provided by reconfiguring the XAMPP sendmail function to work with Gmail's SMTP settings.</li><br>
+		  <li>Once signed in, a session is created which will allow access to the restricted pages.</li><br>
+		  <li>The Logout page deletes the user session which removes access to the restricted pages.</li><br>
+		  </ol>
+		</div>
+		
+		<button class="accordion">Donations Page</button>
+		<div class="panel">
+		  <p>The objective of the fourth mini-project is to add session content as well as a user database to create a secure user-specific experience. You may add this content to your existing pages or add new pages to your website. At a minimum, your project should meet the following requirements:</p>
+		  <ol style="list-style-type:disc;">
+		  <li>One of your pages must include a form consisting of at least three input element types. Associated with your form should be a script that reads in user input and produces output that is displayed somewhere on your webpage. As an example, if you were building a pizza ordering website, you could have a page with a form that lets users specify options for pizza size, sauce, toppings, etc. in such a way that, whenever any setting is changed, a script runs to calculate the total price of the pizza, which is then displayed.</li><br>
+		  <li>One of your pages should include a form whose action attribute is set to a PHP file on your website that you have developed. It is up to you to decide whether to use the GET or POST method for sending inputs to the server.</li><br>
+		  <li>Your PHP script should include a feature in which user input is logged into CSV (or similar) text files that are stored on the web server. To prevent these log files from growing too large, a separate log file should be created for each date with the filename “log_[4 digit year]_[2 digit month]_[2 digit day].csv.” As an example, if the user submits a form an Aug. 2, 2016, then the user input should be appended to a file called log_2016_08_02.csv. You will need to use the PHP functions fopen, fprintf, and fclose, which are very similar to their C counterparts. You will also need to use the various date related functions we covered in class.</li><br>
+		  <li>Your PHP script should include input validation such that if a user inputs an incorrect or empty value for a field (e.g., inputs text where a number is expected), the form is presented again to the user along with an error message. Invalid inputs should still be recorded into the log file.</li><br>
+		  <li>Assuming input validation succeeds, your PHP script should perform some sort of calculation with the input data and present results on either the same page or another page using HTML that is dynamically generated via PHP.</li><br>
+		  <li>Your PHP script should use strings, numerical types, associative arrays, and at least one function.</li><br>
+		  <li>Your website should link to a MySQL database of user information. Your database should consist of at least one table that contains columns for storing usernames, passwords, user email, user address, and any other relevant user information.</li><br>
+		  <li>You should have a registration page that allows new users to register (and have their information added to the database).</li><br>
+		  <li>Your website should have at least two restricted pages that cannot be accessed unless a user has logged in (see below requirement). If a user tries to access one of these pages without being logged in, then the user should be redirected to the login page.</li><br>
+		  <li>You should have a login page that lets a user provide his/her username and password. If the credentials match a row in your database table, then let the user access some restricted page in your site and create a session for that user. If the credentials do not match a row in your database table, then redisplay the login page, but with an error message.</li><br>
+		  <li>You should have a logout functionality in which the session for the user is terminated.</li><br>
+		  <li>You should create a predefined user with username = ‘admin’ and password = ‘hello’ for your and my testing purposes.</li><br>
+		  <li></li><br>
+		  </ol>	
+		</div>
+		
+		<button class="accordion">Web Server</button>
+		<div class="panel">
+		  <ol style="list-style-type:disc;">
+		  <li>I'm using Amazon Web Services Elastic Compute Cloud (i.e. EC2).</li><br>
+		  <li>The EC2 instance is hosting a Windows Server 2019 operating system.</li><br>
+		  <li>The Windows virtual machine is running an Appache XAMPP open source web server.</li><br>
+		  <li>Inbound traffic is allowed for HTTP or HTTPS.</li><br>
+		  </ol>	
+		</div>
+		
+		<script>
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+		  acc[i].addEventListener("click", function() {
+			this.classList.toggle("active2");
+			var panel = this.nextElementSibling;
+			if (panel.style.maxHeight) {
+			  panel.style.maxHeight = null;
+			} else {
+			  panel.style.maxHeight = panel.scrollHeight + "px";
+			}ss
+		  });
+		}
+		</script>
+	</data>		
+	<footer>
+		<p>This website and the information found within was created for educational purposes only.</p>
+		<p>Authored by: Adam Hennefer</p>
+		<p>Contact information: <a href="mailto:ahennefer3@horizon.csueastbay.edu"> ahennefer3@horizon.csueastbay.edu</a></p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!--
+// Name:  Adam Hennefer
+// Date: 10.17.19 
+// File: partners.html
+-->
+ 
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> MyCSSite-Partners </title>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="Adam Hennefer, MyCSSite, partners">
+	<meta name="author" content="Adam Hennefer">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<style>
+		
+	</style>
+</head>
+
+<body>
+	<header>
+		<img src = "images/teamwork.jpg" class = "center1" >
+	</header>
+
+	<ul>
+		<link rel="stylesheet" href="styles.css">
+		<li><a href="home.html">Home</a></li>
+		<li><a href="history.html">History</a></li>
+		<li><a href="about.html">About</a></li>
+		<li><a class="active" href="partners.html">Partners</a></li>
+		<li><a href="members.php">Members</a></li>
+		<li><a href="restricted.php">Restricted</a></li>
+		<li a class="money" style="float:right"><a href="donate.html">Donate</a></li>
+		<li style="float:right"><a href="login.php">Login</a></li>
+		<li style="float:right"><a href="logout.php">Logout</a></li>
+	</ul>
+	
+	<data>
+		<p>It might seem obvious but dreams and goals don't just happen.  It takes a team of support.  
+		This is a place for me to thank those that helped me reach some of mine.  
+		Please double click image for a special message.</p><br>
+		<div id="secret" class="center2">
+		
+			<!--secret text will print here -->
+		</div>
+		<div >			
+			<img src = "images/captainObvious.gif" class ="center2" onclick="secretMessage()">
+		</div>
+		<div  >
+			<script>
+			var i = 0;
+			var speed = 50;
+			var txt = "";
+			var xhttp = new XMLHttpRequest();
+		
+			function typeWriter() {	
+				if (i < txt.length) {
+						document.getElementById("secret").innerHTML += 
+						txt.charAt(i);
+						i++;
+						setTimeout(typeWriter, speed);
+					}
+					xhttp.open("POST", "anonymous.txt", true);
+					xhttp.send();
+					return true;
+			};
+				
+			function secretMessage(){		
+				xhttp.onreadystatechange = function(){
+					if (this.readyState == 4 && this.status == 200){
+						txt = this.responseText;								
+					}	
+				};
+				typeWriter();
+			}	
+			</script>
+		</div>
+	</data>
+	
+	<footer>
+		<p>This website and the information found within was created for educational purposes only.</p>
+		<p>Authored by: Adam Hennefer</p>
+		<p>Contact information: <a href="mailto:ahennefer3@horizon.csueastbay.edu"> ahennefer3@horizon.csueastbay.edu</a></p>
+	</footer>
+</body>
+
+</html>
