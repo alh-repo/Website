@@ -17,9 +17,6 @@
 	<meta name="author" content="Adam Hennefer">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="styles.css">
-	<style>
-		<link rel="stylesheet" href="styles.css">
-	</style>
 </head>
 
 <body>
@@ -86,13 +83,13 @@
 		
 		<button class="accordion">Partners Page</button>
 		<div class="panel">
-		  <p>The partners page features a thank you message.</p>
+		  <p>The partners page features a hidden thank you message.</p>
 		  <ol style="list-style-type:disc;">
 		  <li>This page runs a script when the gif is double clicked.</li><br>
 		  <li>The script utilizes AJAX (via an XMLHttpRequest object) to access text that is stored in a file.</li><br>
 		  <li>The plain text file is then printed to the web page one character at a time to mimic a typewriter.</li><br>
 		  <li>The script sends its output text to an innerHTML content dividing element which is empty.</li><br>
-		  <li>This appears to split the page as a message is typed.</li><br>
+		  <li>The effect appears to split the page as a message is typed above the gif.</li><br>
 		  </ol>	
 		</div>
 				
@@ -101,31 +98,24 @@
 		  <ol style="list-style-type:disc;">
 		  <li>The Members page & the Restricted page will redirect users to the login page if they are not signed in.</li><br>
 		  <li>The Login page and new_users_login page use PHP for the server-side scripting.</li><br>
-		  <li>The PHP scripts connect to an SQL database to authenticate or create a user account.</li><br>
-		  <li>If authenticated, new users recieve email confirmation with their username and password. </li><br>
+		  <li>The PHP scripts connect to an SQL database to authenticate or create a new user account.</li><br>
+		  <li>If a new account is created, the new user will recieve email confirmation with their username and password. </li><br>
 		  <li>Email is provided by reconfiguring the XAMPP sendmail function to work with Gmail's SMTP settings.</li><br>
-		  <li>Once signed in, a session is created which will allow access to the restricted pages.</li><br>
-		  <li>The Logout page deletes the user session which removes access to the restricted pages.</li><br>
+		  <li>Once logged in, a session is created which will allow access to the restricted pages.</li><br>
+		  <li>The Logout page terminates the user session thus removing access to the restricted content.</li><br>
 		  </ol>
 		</div>
 		
-		<button class="accordion">Donations Page</button>
+		<button class="accordion">Donate Page</button>
 		<div class="panel">
-		  <p>The objective of the fourth mini-project is to add session content as well as a user database to create a secure user-specific experience. You may add this content to your existing pages or add new pages to your website. At a minimum, your project should meet the following requirements:</p>
+		  <p>The Donate page features form input to mimic a generic transaction.</p>
 		  <ol style="list-style-type:disc;">
-		  <li>One of your pages must include a form consisting of at least three input element types. Associated with your form should be a script that reads in user input and produces output that is displayed somewhere on your webpage. As an example, if you were building a pizza ordering website, you could have a page with a form that lets users specify options for pizza size, sauce, toppings, etc. in such a way that, whenever any setting is changed, a script runs to calculate the total price of the pizza, which is then displayed.</li><br>
-		  <li>One of your pages should include a form whose action attribute is set to a PHP file on your website that you have developed. It is up to you to decide whether to use the GET or POST method for sending inputs to the server.</li><br>
-		  <li>Your PHP script should include a feature in which user input is logged into CSV (or similar) text files that are stored on the web server. To prevent these log files from growing too large, a separate log file should be created for each date with the filename “log_[4 digit year]_[2 digit month]_[2 digit day].csv.” As an example, if the user submits a form an Aug. 2, 2016, then the user input should be appended to a file called log_2016_08_02.csv. You will need to use the PHP functions fopen, fprintf, and fclose, which are very similar to their C counterparts. You will also need to use the various date related functions we covered in class.</li><br>
-		  <li>Your PHP script should include input validation such that if a user inputs an incorrect or empty value for a field (e.g., inputs text where a number is expected), the form is presented again to the user along with an error message. Invalid inputs should still be recorded into the log file.</li><br>
-		  <li>Assuming input validation succeeds, your PHP script should perform some sort of calculation with the input data and present results on either the same page or another page using HTML that is dynamically generated via PHP.</li><br>
-		  <li>Your PHP script should use strings, numerical types, associative arrays, and at least one function.</li><br>
-		  <li>Your website should link to a MySQL database of user information. Your database should consist of at least one table that contains columns for storing usernames, passwords, user email, user address, and any other relevant user information.</li><br>
-		  <li>You should have a registration page that allows new users to register (and have their information added to the database).</li><br>
-		  <li>Your website should have at least two restricted pages that cannot be accessed unless a user has logged in (see below requirement). If a user tries to access one of these pages without being logged in, then the user should be redirected to the login page.</li><br>
-		  <li>You should have a login page that lets a user provide his/her username and password. If the credentials match a row in your database table, then let the user access some restricted page in your site and create a session for that user. If the credentials do not match a row in your database table, then redisplay the login page, but with an error message.</li><br>
-		  <li>You should have a logout functionality in which the session for the user is terminated.</li><br>
-		  <li>You should create a predefined user with username = ‘admin’ and password = ‘hello’ for your and my testing purposes.</li><br>
-		  <li></li><br>
+		  <li>The Donate page uses JavaScript as well as HTML5 elements to prompt the user and filter invalid input.</li><br>
+		  <li>The form is sent via POST to a PHP file on the server-side which has additional input validation. </li><br>
+		  <li>If the input is valid, calc.php will log the donation into a CSV file that is stored on the web server. </li><br>
+		  <li>To prevent the files from growing too large, a separate log is created each day with the filename “log_[date].csv.” </li><br>
+		  <li>Invalid inputs are recorded into an "error_log_[date].csv" file.</li><br>
+		  <li>If the input is valid, calc.php will dynamically output the total year to date donations along with a thank you message. </li><br>
 		  </ol>	
 		</div>
 		
