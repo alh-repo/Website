@@ -7,6 +7,8 @@
  * This file processes the donation form.
 */
 
+
+
 	// variables from form
 	$name = "";
 	$addy = "";
