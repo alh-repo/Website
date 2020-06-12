@@ -1,10 +1,10 @@
 <?php
 /*
- * Name:  Adam Hennefer
+ * Author Name:  Adam Hennefer
  * Date create: 11.15.19
- * Last update: 6.4.20
- * File: calc.php
- * This file process the donation form.
+ * Last update: 6.11.20
+ * File name: calc.php
+ * This file processes the donation form.
 */
 
 	// variables from form
@@ -14,7 +14,7 @@
 	$zip = "";
 	$state = "";
 	
-	// will use for error messages
+	// variable for error message
 	$errorMSG = "";
 	
 	// variables for log files
@@ -22,14 +22,13 @@
 	$month = date("F");
 	$day = date("j");
 	
-	// test input function
+	// function to test input
 	function test_input($data) {
 		$data = trim($data);
 		$data = stripslashes($data);
 		$data = htmlspecialchars($data);
 		return $data;
 	}
-	
 	
 	// test name
 	if (empty($_POST["fname"])) {
@@ -53,7 +52,7 @@
 		$addy = test_input($_POST["address"]);
 	}
 
-	// test city
+	// check city
 	if (empty($_POST["city"])) {
 		$errorMSG .= "City is required ";
 	} 
@@ -64,7 +63,7 @@
 		$city_name = test_input($_POST["city"]);
 	}
 
-	// test zip code
+	// check zip code
 	if (empty($_POST["zip"])) {
 		$errorMSG .= "Zip code is required ";
 	} 
@@ -76,7 +75,7 @@
 		$zip = test_input($_POST["zip"]);
 	}
 	
-	// state input must match a state ID as abreviated
+	// fucntion to check state input - input must match a state ID as abreviated
 	function validateState($is_state) {
 		$states = array("AK","AL","AR","AS","AZ","CA","CO","CT","DC","DE",
 			"FL","GA","GU","HI","IA",
@@ -89,8 +88,7 @@
 		else { return false; }
 	}
 	
-	
-	// test state 
+	// check state 
 	if (empty($_POST["state"])) {
 		$errorMSG .= "State is required ";
 	} 
@@ -102,7 +100,6 @@
 		$state = test_input($upperState);
 	}
 
-	
 	// check for valid email
 	if (empty($_POST["email"])) {
 		$errorMSG .= "Email is required ";
@@ -112,51 +109,52 @@
 	} 
 	else {
 		$email = htmlspecialchars($_POST["email"]);	
-		// check for valid donation
-		if (empty($_POST["donation_amount"])) {
-			$errorMSG .= "Amount is required ";
-		} 
-		else if((!filter_var($_POST["donation_amount"], FILTER_VALIDATE_REGEXP, 
-			array("options" => array("regexp"=>"/\b\d{1,3}(?:,?\d{3})*(?:\.\d{2})?\b/")))) 
-			|| $_POST["donation_amount"] < 1) {
-			$errorMSG .= "Invalid donation format ";
-		}
-		// if email and donation are valid, log donation into files		
-		else { 
-			$result = htmlspecialchars($_POST["donation_amount"]);
-			// open the total donations file to get the total amount	
-			$fp2 = fopen("donation_total.txt", "a+");
-			$total_donations = fgets($fp2);
-			// set new_total as current donation plus current total.
-			$new_total = floatval($total_donations) + $result;
-			// print thank you messages
-			echo"<br><br>Thank you for your donation of:  $".number_format($result, 2);
-			// load new_total into array it's required for file_puts_contents.
-			$new_total_arr = array($new_total);
-			echo "<br><br>We appreciate your support ".$name."!";
-			// print running total
-			echo "<br><br>Total donations this year:  $".number_format($new_total, 2);
-			// update the running donation total value in the file
-			file_put_contents("donation_total.txt", $new_total_arr);
-			// to load file with fputcsv - requires an array.
-			$list = array($name, $email, $addy, $city_name, $zip, $state, $result);
-			// log donation date and amount
-			$fp = fopen("log_".$year."_".$month."_".$day.".csv", "a");
-			fputcsv($fp, $list);
-			// close both files
-			fclose($fp);
-			fclose($fp2);
-		}
+	}	
+		
+	// check for valid donation
+	if (empty($_POST["donation_amount"])) {
+		$errorMSG .= "Amount is required ";
+	} 
+	else if((!filter_var($_POST["donation_amount"], FILTER_VALIDATE_REGEXP, 
+		array("options" => array("regexp"=>"/\b\d{1,3}(?:,?\d{3})*(?:\.\d{2})?\b/")))) 
+		|| $_POST["donation_amount"] < 1) {
+		$errorMSG .= "Invalid donation format ";
+	}
+	else { 
+		$result = htmlspecialchars($_POST["donation_amount"]);
 	}
 
-	// set error message 
+	// if no error message, enter valid log file 
 	if(empty($errorMSG)){
+		// log donation into files				
+		// open the total donations file to get the total amount	
+		$fp2 = fopen("donation_total.txt", "a+");
+		$total_donations = fgets($fp2);
+		// set new_total as current donation plus current total.
+		$new_total = floatval($total_donations) + $result;
+		// print thank you messages
+		echo"<br><br>Thank you for your donation of:  $".number_format($result, 2);
+		// load new_total into array it's required for file_puts_contents.
+		$new_total_arr = array($new_total);
+		echo "<br><br>We appreciate your support ".$name."!";
+		// print running total
+		echo "<br><br>Total donations this year:  $".number_format($new_total, 2);
+		// update the running donation total value in the file
+		file_put_contents("donation_total.txt", $new_total_arr);
+		// to load file with fputcsv - requires an array.
+		$list = array($name, $email, $addy, $city_name, $zip, $state, $result);
+		// log donation date and amount
+		$fp = fopen("log_".$year."_".$month."_".$day.".csv", "a");
+		fputcsv($fp, $list);
+		// close both files
+		fclose($fp);
+		fclose($fp2);
 		//$msg = "Name: ".$name.", Email: ".$email.", Subject: ".$msg_subject.", Message:".$message;
-		$msg = "fname: ".$name;
+		//$msg = "fname: ".$name;
 		//echo json_encode(['code'=>200, 'msg'=>$msg]);
 		json_encode(['code'=>200]);
 	}
-	// log error submissions
+	// else enter error log
 	else{
 		// set form variables with possible error input 
 		$email = htmlspecialchars($_POST["email"]);	
