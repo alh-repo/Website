@@ -1,7 +1,8 @@
 <!--
-// Name:  Adam Hennefere
-// Date: 11.15.19 
-// File: donate.html
+// Author name:  Adam Hennefer
+// Date created: 11.15.19 
+// Last updated: 6.11.20
+// File name: donate.html
 -->
 
 <!DOCTYPE html>
@@ -123,7 +124,48 @@
 			if(is_email){input.removeClass("invalid").addClass("valid");}
 			else{input.removeClass("valid").addClass("invalid");}
 		});
-
+		
+		<!--Card Name can't be blank-->
+		$('#cname').on('input', function() {
+			var input=$(this);
+			var is_cname=input.val();
+			if(is_cname){input.removeClass("invalid").addClass("valid");}
+			else{input.removeClass("valid").addClass("invalid");}
+		});
+				
+		<!--Credit Card Number can't be blank-->
+		$('#ccnum').on('input', function() {
+			var input=$(this);
+			var is_ccnum=input.val();
+			if(is_ccnum){input.removeClass("invalid").addClass("valid");}
+			else{input.removeClass("valid").addClass("invalid");}
+		});
+		
+		<!--Expiration Number can't be blank-->
+		$('#expmonth').on('input', function() {
+			var input=$(this);
+			var is_expmonth=input.val();
+			if(is_expmonth){input.removeClass("invalid").addClass("valid");}
+			else{input.removeClass("valid").addClass("invalid");}
+		});
+		
+		<!--Expiration Year can't be blank-->
+		$('#expyear').on('input', function() {
+			var input=$(this);
+			var is_expyear=input.val();
+			if(is_expyear){input.removeClass("invalid").addClass("valid");}
+			else{input.removeClass("valid").addClass("invalid");}
+		});
+		
+		<!--Card Verification Value can't be blank-->
+		$('#cvv').on('input', function() {
+			var input=$(this);
+			var is_cvv=input.val();
+			if(is_cvv){input.removeClass("invalid").addClass("valid");}
+			else{input.removeClass("valid").addClass("invalid");}
+		});
+		
+		
 		// Form Submission Validation
 		$(".btn").click(function(event){
 			var form_data = $("#donation").serializeArray();
@@ -179,19 +221,20 @@
 		<li style="float:right"><a href="logout.php">Logout</a></li>
 	</ul>
 	<data>
-		<h3>Please make a donation.</h3>
+		<h3>Please make a fake donation. Payment information will not be processed, only temporarily collected.</h3>
 	</data>
  
 	 
-	<div id = "form" class="row">
+  <div id = "form" class="row">
   <div id = "form" class="col-75">
     <div class="container">
 	  <form id="donation" method="post" action="" >	
       <!--  
         <div class="row">
           <div class="col-50">
-            <h3>Billing Address</h3>
-        -->
+		-->  
+            <h3>Billing Address:</h3>
+        
 			<div>
 			<label for="fname"><i class="fa fa-user"></i> Full Name</label>
             <input type="text" id="fname" name="fname" placeholder="John M. Doe" required></input>
@@ -233,37 +276,49 @@
 		  
           <div class="col-50">
             <h3>Payment</h3>
-            <label for="fname">Accepted Cards</label>
+		  -->
+            <h3>Accepted Cards:</h3>
             <div class="icon-container">
               <i class="fa fa-cc-visa" style="color:navy;"></i>
               <i class="fa fa-cc-amex" style="color:blue;"></i>
               <i class="fa fa-cc-mastercard" style="color:red;"></i>
               <i class="fa fa-cc-discover" style="color:orange;"></i>
             </div>
-            <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
-            <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-            <label for="expmonth">Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="September">
-            <div class="row">
+            
+			<label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cname" placeholder="John Doe" required></input>
+            <span class="error">A valid card name is required</span>
+			
+			<label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="ccnum" placeholder="1111-2222-3333-4444" required></input>
+            <span class="error">A valid credit card number format is required</span>
+			
+			<label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="January" required></input>
+            <span class="error">A valid Exp Month is required</span>
+			
+			<div class="row">
               <div class="col-50">
                 <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="expyear" placeholder="2018">
+                <input type="text" id="expyear" name="expyear" placeholder="2024" required></input>
+				<span class="error">A expiration year is required</span>
               </div>
+			  
               <div class="col-50">
                 <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="352">
+                <input type="text" id="cvv" name="cvv" placeholder="321" required></input>
+				<span class="error">A valid card verification value is required</span>
               </div>
             </div>
-          </div>
+    <!--  
+		  </div> 
   <div class="col-25">
     <div class="container">
 	-->
       <h4>Support MyCSSite<span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> </span></h4>
       <div>
 	  <label for="cname">Donation Amount</label>
-      <input type="text" id="donation_amount" name="donation_amount" placeholder="$" required></input>
+      <input type="text" id="donation_amount" name="donation_amount" placeholder="$0.00" required></input>
 	  <span class="error">A valid donation amount is required</span>
       </div>
 	  <p>Total <span class="price" style="color:black"><b>$<tl>0.00</tl></b></span></p>
@@ -282,7 +337,7 @@
       </form>
 </body>
 	  <div>
-	  <button class="btn" id="btn" type="submit" >Make Donation</button>
+	  <button class="btn" id="btn" type="submit">Submit Donation</button>
 	  </div>
   	  <div class="myresult">    
 	  </div>
