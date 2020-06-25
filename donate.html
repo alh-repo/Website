@@ -135,34 +135,40 @@
 			else{input.removeClass("valid").addClass("invalid");}
 		});
 				
-		<!--Credit Card Number can't be blank-->
+		<!--Credit Card Number can't be blank, must be numeric, & must be 13 to 16 digits-->
 		$('#ccnum').on('input', function() {
 			var input=$(this);
-			var is_ccnum=input.val();
+			var cardno=/^([0-9]{13,15})$/;
+			var is_ccnum=cardno.test(input.val());
 			if(is_ccnum){input.removeClass("invalid").addClass("valid");}
 			else{input.removeClass("valid").addClass("invalid");}
 		});
 		
-		<!--Expiration Number can't be blank-->
+		<!--Expiration month can't be blank, must be numeric, & must be 2 digits -->
 		$('#expmonth').on('input', function() {
-			var input=$(this);
-			var is_expmonth=input.val();
+			var input=$(this); 
+			var month=/^(0[1-9]|1[0-2]{1})$/;
+			var is_expmonth=month.test(input.val());
 			if(is_expmonth){input.removeClass("invalid").addClass("valid");}
 			else{input.removeClass("valid").addClass("invalid");}
 		});
 		
-		<!--Expiration Year can't be blank-->
+		<!--Expiration Year can't be blank, must be numeric -->
 		$('#expyear').on('input', function() {
 			var input=$(this);
-			var is_expyear=input.val();
-			if(is_expyear){input.removeClass("invalid").addClass("valid");}
+			var year=/^([0-9]{4})$/;
+			var is_expyear=year.test(input.val());
+			var date = new Date();
+			var current_year=date.getFullYear();
+			if(is_expyear && input.val() >= current_year){input.removeClass("invalid").addClass("valid");}
 			else{input.removeClass("valid").addClass("invalid");}
 		});
 		
-		<!--Card Verification Value can't be blank-->
+		<!--Card Verification Value can't be blank, must be numeric, and must be three digits-->
 		$('#cvv').on('input', function() {
 			var input=$(this);
-			var is_cvv=input.val();
+			var cvv=/^([0-9]{3})$/;
+			var is_cvv=cvv.test(input.val());
 			if(is_cvv){input.removeClass("invalid").addClass("valid");}
 			else{input.removeClass("valid").addClass("invalid");}
 		});
@@ -175,18 +181,18 @@
 			for (var input in form_data){
 				var element = $("#"+form_data[input]['name']);
 				var valid = element.hasClass("valid");
-				//alert("var element: "+"#"+form_data[input]['name']);
-				//alert("testing valid: "+valid);
+				alert("var element: "+"#"+form_data[input]['name']);
+				alert("testing valid: "+valid);
 				var error_element = $("span", element.parent());
 				if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;  }
 				else{error_element.removeClass("error_show").addClass("error");}	
 			}
 			if (!error_free){
 				event.preventDefault(); 
-				//alert('prevented Default action');
+				alert('prevented Default action');
 			}
 			else{
-				//alert('No errors: Form will be submitted');
+				alert('No errors: Form will be submitted');
 				$("form").hide();
 				$("button").hide();
 				$("#form").hide();
@@ -292,24 +298,24 @@
             <span class="error">A valid card name is required</span>
 			
 			<label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="ccnum" placeholder="1111-2222-3333-4444" required></input>
+            <input type="tel" id="ccnum" name="ccnum" minlength="13" maxlength="16" placeholder="4444-3333-2222-1111" required></input>
             <span class="error">A valid credit card number format is required</span>
 			
 			<label for="expmonth">Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="January" required></input>
-            <span class="error">A valid Exp Month is required</span>
+            <input type="text" id="expmonth" name="expmonth" placeholder="01" minlength="2" maxlength="2" required></input>
+            <span class="error">A valid two digit Exp Month is required</span>
 			
 			<div class="row">
               <div class="col-50">
                 <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="expyear" placeholder="2024" required></input>
-				<span class="error">A expiration year is required</span>
+                <input type="text" id="expyear" name="expyear" placeholder="2024" minlength="4" maxlength="4" required></input>
+				<span class="error">A valid four digit expiration year is required</span>
               </div>
 			  
               <div class="col-50">
                 <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="321" required></input>
-				<span class="error">A valid card verification value is required</span>
+                <input type="text" id="cvv" name="cvv" placeholder="321" minlength="3" maxlength="3" required></input>
+				<span class="error">A valid three digit card verification value is required</span>
               </div>
             </div>
     <!--  
