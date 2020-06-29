@@ -2,7 +2,7 @@
 /*
  * Author Name:  Adam Hennefer
  * Date create: 11.15.19
- * Last update: 6.11.20
+ * Last update: 6.29.20
  * File name: calc.php
  * This file processes the donation form.
 */
@@ -15,6 +15,11 @@
 	$city_name = "";
 	$zip = "";
 	$state = "";
+	$cardname = "";
+	$cardnumber = "";
+	$xmonth = "";
+	$xyear = "";	
+	$cvv = "";
 	
 	// variable for error message
 	$errorMSG = "";
@@ -24,7 +29,7 @@
 	$month = date("F");
 	$day = date("j");
 	
-	// function to test input
+	// function to test input - security
 	function test_input($data) {
 		$data = trim($data);
 		$data = stripslashes($data);
@@ -126,6 +131,62 @@
 		$result = htmlspecialchars($_POST["donation_amount"]);
 	}
 
+	// check card name
+	if (empty($_POST["cname"])) {
+		$errorMSG .= "Card name is required ";
+	} 
+	else if(preg_match('/^([a-zA-Z]+[\'-]?[a-zA-Z]+[ ]?)+$/', $_POST["cname"])){
+		$cardname = test_input($_POST["cname"]);	
+	}
+	else {
+		$errorMSG .= "Invalid name format ";	
+	} 
+	
+	// check card number
+	if (empty($_POST["ccnum"])) {
+		$errorMSG .= "Card number is required ";
+	} 
+	else if(preg_match('/^([0-9]{13,15})$/', $_POST["ccnum"])){
+		$cardnumber = strval(test_input($_POST["ccnum"]));	
+	}
+	else {
+		$errorMSG .= "Invalid card number format ";	
+	}
+	
+	// check expiration month
+	if (empty($_POST["expmonth"])) {
+		$errorMSG .= "Expiration month is required ";
+	} 
+	else if(preg_match('/^(0[1-9]|1[0-2]{1})$/', $_POST["expmonth"])){
+		$xmonth = test_input($_POST["expmonth"]);	
+	}
+	else {
+		$errorMSG .= "Invalid expiration month format. Please use two digits ";	
+	}
+
+	// check expiration year
+	if (empty($_POST["expyear"])) {
+		$errorMSG .= "Expiration year is required ";
+	} 
+	else if(preg_match('/^([0-9]{4})$/', $_POST["expyear"])){
+		$xyear = test_input($_POST["expyear"]);	
+	}
+	else {
+		$errorMSG .= "Invalid expiration year format. Please use four digits ";	
+	}
+	
+	// check card verification value - cvv
+	if (empty($_POST["cvv"])) {
+		$errorMSG .= "Card verification value is required ";
+	} 
+	else if(preg_match('/^([0-9]{3})$/', $_POST["cvv"])){
+		$cvv = test_input($_POST["cvv"]);	
+	}
+	else {
+		$errorMSG .= "Invalid CVV format. Please use three digits ";	
+	}	
+
+
 	// if no error message, enter valid log file 
 	if(empty($errorMSG)){
 		// log donation into files				
@@ -144,7 +205,7 @@
 		// update the running donation total value in the file
 		file_put_contents("donation_total.txt", $new_total_arr);
 		// to load file with fputcsv - requires an array.
-		$list = array($name, $email, $addy, $city_name, $zip, $state, $result);
+		$list = array($name, $email, $addy, $city_name, $zip, $state, $result, $cardname, $cardnumber, $xmonth, $xyear, $cvv);
 		// log donation date and amount
 		$fp = fopen("log_".$year."_".$month."_".$day.".csv", "a");
 		fputcsv($fp, $list);
@@ -166,9 +227,14 @@
 		$city_name = test_input($_POST["city"]);
 		$zip = test_input($_POST["zip"]);
 		$state = test_input($_POST["state"]);
+		$cardname = test_input($_POST["cname"]);
+		$cardnumber = test_input($_POST["ccnum"]);
+		$xmonth = test_input($_POST["expmonth"]);
+		$xyear = test_input($_POST["expyear"]);
+		$cvv = test_input($_POST["cvv"]);
 		
 		// to load file with fputcsv - requires an array.
-		$list = array($name, $email, $addy, $city_name, $zip, $state, $result);
+		$list = array($name, $email, $addy, $city_name, $zip, $state, $result, $cardname, $cardnumber, $xmonth, $xyear, $cvv);
 		// log error donation date and amount
 		$fp3 = fopen("error_log_".$year."_".$month."_".$day.".csv", "a");
 		fputcsv($fp3, $list);

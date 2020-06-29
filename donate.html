@@ -1,7 +1,7 @@
 <!--
 // Author name:  Adam Hennefer
 // Date created: 11.15.19 
-// Last updated: 6.11.20
+// Last updated: 6.29.20
 // File name: donate.html
 -->
 
@@ -138,7 +138,7 @@
 		<!--Credit Card Number can't be blank, must be numeric, & must be 13 to 16 digits-->
 		$('#ccnum').on('input', function() {
 			var input=$(this);
-			var cardno=/^([0-9]{13,15})$/;
+			var cardno=/^([0-9]{13,16})$/;
 			var is_ccnum=cardno.test(input.val());
 			if(is_ccnum){input.removeClass("invalid").addClass("valid");}
 			else{input.removeClass("valid").addClass("invalid");}
@@ -180,18 +180,18 @@
 			for (var input in form_data){
 				var element = $("#"+form_data[input]['name']);
 				var valid = element.hasClass("valid");
-				alert("var element: "+"#"+form_data[input]['name']);
-				alert("testing valid: "+valid);
+				//alert("var element: "+"#"+form_data[input]['name']);
+				//alert("testing valid: "+valid);
 				var error_element = $("span", element.parent());
 				if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;  }
 				else{error_element.removeClass("error_show").addClass("error");}	
 			}
 			if (!error_free){
 				event.preventDefault(); 
-				alert('prevented Default action');
+				//alert('prevented Default action');
 			}
 			else{
-				alert('No errors: Form will be submitted');
+				//alert('No errors: Form will be submitted');
 				$("form").hide();
 				$("button").hide();
 				$("#form").hide();
@@ -244,37 +244,37 @@
         
 			<div>
 			<label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="fname" placeholder="John M. Doe" required></input>
+            <input type="text" id="fname" name="fname" placeholder="Steve Jobs" required></input>
             <span class="error">A name is required</span>
 			</div>
 			
 			<div>
 			<label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" placeholder="example@example.com" required ></input>
+            <input type="text" id="email" name="email" placeholder="example@domain.com" required ></input>
 			<span class="error">A valid email address is required</span>
 			</div>
             
 			<div>
 			<label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="address" name="address" placeholder="542 W. 15th Street" required ></input>
+            <input type="text" id="address" name="address" placeholder="642 W. 15th Street" required ></input>
 			<span class="error">A valid address is required</span>
 			</div>
 			
 			<div>
 			<label for="city"><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="New York" required ></input>
+            <input type="text" id="city" name="city" placeholder="San Ramon" required ></input>
 			<span class="error">A valid city is required</span>
 			</div>
 			
             <div class="row">
               <div class="col-50">
                 <label for="state">State</label>
-                <input class="up" type="text" id="state" name="state" maxlength="2" placeholder="NY" required></input>
+                <input class="up" type="text" id="state" name="state" maxlength="2" placeholder="CA" required></input>
 				<span class="error">A valid state is required</span>
               </div>
               <div class="col-50">
                 <label for="zip">Zip</label>
-                <input type="text" id="zip" name="zip" maxlength="5" placeholder="10001" required></input>
+                <input type="text" id="zip" name="zip" maxlength="5" placeholder="94583" required></input>
 				<span class="error">A valid zip code is required</span>
               </div>
             </div>
@@ -293,16 +293,16 @@
             </div>
             
 			<label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cname" placeholder="John Doe" required></input>
-            <span class="error">A valid card name is required</span>
+            <input type="text" id="cname" name="cname" placeholder="Steve Jobs" required></input>
+            <span class="error">A card name is required</span>
 			
 			<label for="ccnum">Credit card number</label>
             <input type="tel" id="ccnum" name="ccnum" minlength="13" maxlength="16" placeholder="4444-3333-2222-1111" required></input>
-            <span class="error">A valid credit card number format is required</span>
+            <span class="error">A credit card number is required</span>
 			
 			<label for="expmonth">Exp Month</label>
             <input type="text" id="expmonth" name="expmonth" placeholder="01" minlength="2" maxlength="2" required></input>
-            <span class="error">A valid two digit Exp Month is required</span>
+            <span class="error">A valid two digit expiration month is required</span>
 			
 			<div class="row">
               <div class="col-50">
