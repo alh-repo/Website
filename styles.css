@@ -68,6 +68,18 @@ header {
 	border-radius: 10px;
 }
 
+.fa-github, .fa-linkedin-square, .fa-envelope{
+	color: black;
+	font-size: 33px;
+	text-align: center;
+	clear: both;
+	line-height: 100%;
+}
+
+td {
+  padding: 25px;
+}
+
 footer {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 13px;

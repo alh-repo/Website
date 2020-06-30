@@ -47,7 +47,7 @@ body {
 
 input[type=email], button[type=button], 
 input[type=submit], input[type=password], 
-input[type=text] {
+input[type=text], input[type=tel] {
   width: 100%;
   margin-bottom: 20px;
   padding: 12px;
