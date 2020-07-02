@@ -5,7 +5,7 @@
 <!--
 // Author name:  Adam L. Hennefer
 // Date created: 9.25.19 
-// Last updated: 6.29.20
+// Last updated: 7.2.20
 // File: home.html
 -->
 
@@ -19,7 +19,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 
 <body>
@@ -42,8 +41,7 @@
 	<br>
 	<data>
 		<p>Welcome to My Computer Science Web Site. A project developed by Adam Hennefer
-			while enrolled at California State University East Bay.
-			I chose to make this website because it is simple, functional and adaptable.  
+			while enrolled at California State University East Bay.  
 			It exhibits many common website features.  These features are 
 			briefly summarize within the accordian presented below.  
 			This project represents my initial introduction into web developement. </p>
@@ -51,22 +49,17 @@
 		<p><strong>Website Features - Technical Jargon:</strong></p>
 		<button class="accordion">Home Page</button>
 		<div class="panel">
-		<p></p>
-			<ol style="list-style-type:disc;">
-			<li>This sites uses HTML5 code and utilizes semantic tags (e.g., header, section, aside, footer, etc.).</li><br>
-			<li>Styles are generally defined in separate CSS files which use each of the following selectors: element, id, class, and pseudo-class.</li><br>
-			<li>The horizontal navigation bar with links allow the user to traverse the web pages of this site.</li><br>
-			<li>The navigation bar persists at the top of the page when scrolling.</li><br>
-			<li>The accordian feature you are using now gets functionality from JavaScript. </li><br>
-			<li>Each page has a unique title that is represented in the tab of the browser. </li><br>
-			<li>Appropriate meta data is provided in the HMTL code to help identify the page content.</li><br>
+			<ol style="list-style-type:disc;">	
+			<li>A horizontal navigation bar with links allow the users to traverse the web pages of this site.</li><br>
+			<li>The navigation bar should persist at the top of each page when scrolling.  However, Internet Explorer & MS Edge do not support this feature.</li><br>
+			<li>The accordian you are using now recieves its functionality with JavaScript. </li><br>
 		</ol>
 		</div>
 	
 		<button class="accordion">History Page</button>
 		<div class="panel">
-			<p>The History page features a slideshow.  </p>
 			<ol style="list-style-type:disc;">
+			<li>The History page features a slideshow.</li><br>
 			<li>The images are gathered in an HTML container and use a decent amount of CSS to make them fade during transitions.</li><br>
 			<li>The functionality to change images comes from JavaScript.</li><br>
 			<li>The images were compiled just for demonstation purposes.</li><br>
@@ -75,19 +68,19 @@
 
 		<button class="accordion">About Page</button>
 		<div class="panel">
-		  <p>The About page features an embedded video.</p>
 		  <ol style="list-style-type:disc;">
+		  <li>The About page features an embedded video. </li><br>
+		  <li>This is simply a place for me to introce myself.</li><br>
 		  <li>One of my favorite features of HTML5 is the ability to easily embed video based media without the need for a video player plug-in.</li><br>
 		  <li>Video files can be directly embedded in a video element similiar to the way a picture is embedded, so long as the video is formatted as an mp4, webm or ogg file. </li><br>
 		  <li>The HTML5 video element comes loaded with various attributes which provide additional JavaScript functionality to manipulate playback control.</li><br>
-		  <li>The HTML5 video element also allows for Encrypted Media Extensions which are JavaScript API's for protected content.  More information about EME can be found here https://www.w3.org/TR/encrypted-media/</li><br>
 		  </ol>	
 		</div>
 		
 		<button class="accordion">Partners Page</button>
 		<div class="panel">
-		  <p>The partners page features a thank you message.</p>
 		  <ol style="list-style-type:disc;">
+		  <li>The partners page features a thank you message.</li><br>
 		  <li>This page runs a script when the gif is double clicked.</li><br>
 		  <li>The script utilizes AJAX (via an XMLHttpRequest object) to access text that is stored in a file.</li><br>
 		  <li>The plain text file is then printed to the web page one character at a time to mimic a typewriter.</li><br>
@@ -108,23 +101,15 @@
 		  </ol>
 		</div>
 		
-		<button class="accordion">Donations Page</button>
+		<button class="accordion">Donate Page</button>
 		<div class="panel">
-		  <p>The objective of the fourth mini-project is to add session content as well as a user database to create a secure user-specific experience. You may add this content to your existing pages or add new pages to your website. At a minimum, your project should meet the following requirements:</p>
 		  <ol style="list-style-type:disc;">
-		  <li>One of your pages must include a form consisting of at least three input element types. Associated with your form should be a script that reads in user input and produces output that is displayed somewhere on your webpage. As an example, if you were building a pizza ordering website, you could have a page with a form that lets users specify options for pizza size, sauce, toppings, etc. in such a way that, whenever any setting is changed, a script runs to calculate the total price of the pizza, which is then displayed.</li><br>
-		  <li>One of your pages should include a form whose action attribute is set to a PHP file on your website that you have developed. It is up to you to decide whether to use the GET or POST method for sending inputs to the server.</li><br>
-		  <li>Your PHP script should include a feature in which user input is logged into CSV (or similar) text files that are stored on the web server. To prevent these log files from growing too large, a separate log file should be created for each date with the filename “log_[4 digit year]_[2 digit month]_[2 digit day].csv.” As an example, if the user submits a form an Aug. 2, 2016, then the user input should be appended to a file called log_2016_08_02.csv. You will need to use the PHP functions fopen, fprintf, and fclose, which are very similar to their C counterparts. You will also need to use the various date related functions we covered in class.</li><br>
-		  <li>Your PHP script should include input validation such that if a user inputs an incorrect or empty value for a field (e.g., inputs text where a number is expected), the form is presented again to the user along with an error message. Invalid inputs should still be recorded into the log file.</li><br>
-		  <li>Assuming input validation succeeds, your PHP script should perform some sort of calculation with the input data and present results on either the same page or another page using HTML that is dynamically generated via PHP.</li><br>
-		  <li>Your PHP script should use strings, numerical types, associative arrays, and at least one function.</li><br>
-		  <li>Your website should link to a MySQL database of user information. Your database should consist of at least one table that contains columns for storing usernames, passwords, user email, user address, and any other relevant user information.</li><br>
-		  <li>You should have a registration page that allows new users to register (and have their information added to the database).</li><br>
-		  <li>Your website should have at least two restricted pages that cannot be accessed unless a user has logged in (see below requirement). If a user tries to access one of these pages without being logged in, then the user should be redirected to the login page.</li><br>
-		  <li>You should have a login page that lets a user provide his/her username and password. If the credentials match a row in your database table, then let the user access some restricted page in your site and create a session for that user. If the credentials do not match a row in your database table, then redisplay the login page, but with an error message.</li><br>
-		  <li>You should have a logout functionality in which the session for the user is terminated.</li><br>
-		  <li>You should create a predefined user with username = ‘admin’ and password = ‘hello’ for your and my testing purposes.</li><br>
-		  <li></li><br>
+		  <li>The Donate page exhibits a standard billing form.</li><br>
+		  <li>Input validation on the client side is provided with HTML5 and JavaScript.  The server side is writen with PHP.</li><br>
+		  <li>Valid input is logged into a CSV file titled "log_[date]" and the user is returned a thank you message with a year to date total donation calculation.</li><br>
+		  <li>Invalid input is logged into a CSV file titled "error_log_[date]" and the user is returned an error message.</li><br>
+		  <li>To prevent files from growing too large, a new file is created for each new day.</li><br>		
+		  <li>Billing and credit card information is periodically deleted and never processed.</li><br>
 		  </ol>	
 		</div>
 		
