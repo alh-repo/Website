@@ -5,7 +5,7 @@
 <!--
 // Author name:  Adam L. Hennefer
 // Date created: 9.25.19 
-// Last updated: 7.2.20
+// Last updated: 12.3.20
 // File: home.html
 -->
 <!DOCTYPE html>
@@ -26,32 +26,37 @@
 	</header>
 	<!-- Internet Explorer & MS Edge do not support sticky nav bar -->
 	<ul>
-		<link rel="stylesheet" href="styles.css">
+		<div class="topnav" id="myTopnav">
 		<li><a class="active" href="#home">Home</a></li>
 		<li><a href="history.html">History</a></li>
 		<li><a href="about.html">About</a></li>
 		<li><a href="partners.html">Partners</a></li>
 		<li><a href="members.php">Members</a></li>
 		<li><a href="restricted.php">Restricted</a></li>
-		<li a class="money" style="float:right"><a href="donate.html">Donate</a></li>
-		<li style="float:right"><a href="login.php">Login</a></li>
-		<li style="float:right"><a href="logout.php">Logout</a></li>
+		<li class="money" ><a href="donate.html">Donate</a></li>
+		<li class="rightfloat" ><a href="login.php">Login</a></li>
+		<li class="rightfloat" ><a href="logout.php">Logout</a></li>
+		<a href="javascript:void(0);" class="icon" onclick="navBurger()">
+		<i class="fa fa-bars"></i>
+		</a>
+		</div>
 	</ul>
 	<br>
 	<data>
-		<p>Welcome to My Computer Science Web Site. This is a project I developed 
+		<p>Welcome to My Computer Science Web Site.  I developed this project  
 			while enrolled at California State University East Bay.  
 			It exhibits many common website features.  These features are 
 			briefly summarize within the accordian presented below.  
-			This project represents my initial introduction into web developement. </p>
+		</p>
 		<br>
 		<p><strong>Website Features - Technical Jargon:</strong></p>
 		<button class="accordion">Home Page</button>
 		<div class="panel">
 			<ol style="list-style-type:disc;">	
 			<li>A horizontal navigation bar with links allow the users to traverse the web pages of this site.</li><br>
-			<li>The navigation bar should persist at the top of each page when scrolling.  However, Internet Explorer & MS Edge do not support this feature.</li><br>
-			<li>The accordian you are using now recieves its functionality with JavaScript. </li><br>
+			<li>The navigation bar should persist at the top of each page when scrolling - Internet Explorer & MS Edge may not support this feature.</li><br>
+			<li>A menu burger icon should replace the list items within the navigation bar when the view is reduced for better mobile formatting.</li><br>
+			<li>The dynamic navigation bar and the accordian recieve their functionality from JavaScript. </li><br>
 		</ol>
 		</div>
 	
@@ -71,7 +76,7 @@
 		  <li>The About page features an embedded video. </li><br>
 		  <li>HTML5 allows embeded video based media without the need for a video player plug-in.</li><br>
 		  <li>Video files can be directly embedded so long as the video is formatted as an mp4, webm or ogg. </li><br>
-		  <li>The HTML5 video element is loaded with various attributes which provide additional JavaScript functionality to manipulate playback/ control.</li><br>
+		  <li>The HTML5 video element is loaded with various attributes which provide additional JavaScript functionality to manipulate playback and control.</li><br>
 		  </ol>	
 		</div>
 		
@@ -102,7 +107,7 @@
 		  <ol style="list-style-type:disc;">
 		  <li>The Donate page exhibits a standard billing form.</li><br>
 		  <li>Input validation on the client side is provided with HTML5 and JavaScript.  The server side is writen with PHP.</li><br>
-		  <li>Valid input is logged into a CSV file titled "log_[date]" and the user is returned a thank you message with a year to date total donation calculation.</li><br>
+		  <li>Valid input is logged into a CSV file titled "log_[date]" and the user is returned a thank you message with the yearly donation sum.</li><br>
 		  <li>Invalid input is logged into a CSV file titled "error_log_[date]" and the user is returned an error message.</li><br>
 		  <li>To prevent files from growing too large, a new file is created for each new day.</li><br>		
 		  <li>Billing and credit card information is periodically deleted and never processed.</li><br>
@@ -133,6 +138,16 @@
 			  panel.style.maxHeight = panel.scrollHeight + "px";
 			}ss
 		  });
+		}
+		/* nav bar menu burger */
+		/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+		function navBurger() {
+		  var x = document.getElementById("myTopnav");
+		  if (x.className === "topnav") {
+			x.className += " responsive";
+		  } else {
+			x.className = "topnav";
+		  }
 		}
 		</script>
 	</data>	

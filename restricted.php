@@ -6,10 +6,10 @@
 <!DOCTYPE html>
 
 <!--
-// Author Name: Adam Hennefer
+// Author name: Adam Hennefer
 // Date created: 12.9.19 
-// Last Updated: 6.30.20 
-// File: restricted.php
+// Last updated: 12.3.20
+// File name: restricted.php
  -->
 <html>
 
@@ -30,25 +30,38 @@
 	</header>
 
 	<ul>
-		<link rel="stylesheet" href="styles.css">
+		<div class="topnav" id="myTopnav">
 		<li><a href="home.html">Home</a></li>
 		<li><a href="history.html">History</a></li>
 		<li><a href="about.html">About</a></li>
 		<li><a href="partners.html">Partners</a></li>
 		<li><a href="members.php">Members</a></li>
 		<li><a class="active" href="restricted.php">Restricted</a></li>
-		<li a class="money" style="float:right"><a href="donate.html">Donate</a></li>
-		<li style="float:right"><a href="login.php">Login</a></li>
-		<li style="float:right"><a href="logout.php">Logout</a></li>
+		<li class="money" ><a href="donate.html">Donate</a></li>
+		<li class="rightfloat" ><a href="login.php">Login</a></li>
+		<li class="rightfloat" ><a href="logout.php">Logout</a></li>
+		<a href="javascript:void(0);" class="icon" onclick="navBurger()">
+		<i class="fa fa-bars"></i>
+		</a>
+		</div>
 	</ul>
 	
 	<data>
 		<p>MyCSSite Restricted information is coming soon......</p><br>
-		<div id="secret" class = "center2">
-			<!--secret text will print here -->
-		</div>
-		
+		<script>
+			/* nav bar menu burger */
+			/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+			function navBurger() {
+			  var x = document.getElementById("myTopnav");
+			  if (x.className === "topnav") {
+				x.className += " responsive";
+			  } else {
+				x.className = "topnav";
+			  }
+			}
+		</script>	
 	</data>
+	
    	<footer>
 		<table style="margin-left:auto;margin-right:auto;">
 			<tr>
@@ -72,5 +85,4 @@
 ?>	
 
 </body>
-
 </html>
