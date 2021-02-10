@@ -60,12 +60,13 @@ input[type=text], input[type=tel] {
 label {
   margin-bottom: 10px;
   display: block;
+  font-size: 17px;
 }
 
 .icon-container {
   margin-bottom: 20px;
   padding: 7px 0;
-  font-size:44px;
+  font-size:17px;
 }
 
 .btn {
