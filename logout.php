@@ -78,7 +78,6 @@
 		</table>
 		<p>This website and the information found within was created for educational purposes only.</p>
 		<p>Authored by: Adam Hennefer</p>
-		<p>Contact information: <a href="mailto:ahennefer3@horizon.csueastbay.edu"> ahennefer3@horizon.csueastbay.edu</a></p>
 	</footer>
 </body>
 </html>
