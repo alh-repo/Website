@@ -1,10 +1,15 @@
-<!--
-// Name:  Adam Hennefer
-// Date: 9.25.19 
-// Last updated: 12.3.20
-// File: history.html
--->
+<?php
+  if(!isset($_SESSION)){
+    session_start();
+}
+?>
 
+<!--
+// Author name:  Adam Hennefer
+// Date created: 09.25.19 
+// Last updated: 02.12.21
+// File name: 	 history.php
+-->
  
 <!DOCTYPE html>
 <html>
@@ -121,22 +126,22 @@
 	</header>
 	<ul>
 		<div class="topnav" id="myTopnav">
-		<li><a  href="home.html">Home</a></li>
+		<li><a  href="home.php">Home</a></li>
 		<li><a class="active" href="#History">History</a></li>
-		<li><a href="about.html">About</a></li>
-		<li><a href="partners.html">Partners</a></li>
+		<li><a href="about.php">About</a></li>
+		<li><a href="partners.php">Partners</a></li>
 		<li><a href="members.php">Members</a></li>
-		<li><a href="restricted.php">Restricted</a></li>
-		<li class="money" ><a href="donate.html">Donate</a></li>
-		<li class="rightfloat" ><a href="login.php">Login</a></li>
-		<li class="rightfloat" ><a href="logout.php">Logout</a></li>
+		<li class="money" ><a href="donate.php">Donate</a></li>
+		<?php echo isset($_SESSION['user'])  
+			? '<li class="rightfloat"><a href="logout.php">Logout</a></li>'  
+			: '<li class="rightfloat"><a href="login.php">Login</a></li>' 
+		?>
 		<a href="javascript:void(0);" class="icon" onclick="navBurger()">
 		<i class="fa fa-bars"></i>
 		</a>
 		</div>
 	</ul>
-	<data>
-	
+	<data>	
 		<div>
 		<P>A visual history of computers:
 		</P>
@@ -144,9 +149,7 @@
 		 <!-- Slideshow container -->
 		<div class="slideshow-container">
 
-		  <!-- Full-width images with number and caption text -->
-
-		
+		  <!-- Images with number and caption text -->
 		  <div class="mySlides fade">
 			<div class="numbertext">1 / 8</div>
 			<img src="images\simpTuringMachine.jpg" style="width:100%">
@@ -242,7 +245,8 @@
 			  dots[slideIndex-1].className += " activate";
 			}
 			/* nav bar menu burger */
-			/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+			/* Toggle between adding and removing the "responsive" class to topnav
+			when the user clicks on the icon */
 			function navBurger() {
 			  var x = document.getElementById("myTopnav");
 			  if (x.className === "topnav") {

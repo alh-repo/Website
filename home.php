@@ -1,13 +1,16 @@
- <?php
- session_start();
- ?>
+<?php
+  if(!isset($_SESSION)){
+    session_start();
+}
+?>
 
 <!--
 // Author name:  Adam L. Hennefer
-// Date created: 9.25.19 
-// Last updated: 12.3.20
-// File: home.html
+// Date created: 09.25.19 
+// Last updated: 02.12.21
+// File name: 	 home.php
 -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,14 +31,15 @@
 	<ul>
 		<div class="topnav" id="myTopnav">
 		<li><a class="active" href="#home">Home</a></li>
-		<li><a href="history.html">History</a></li>
-		<li><a href="about.html">About</a></li>
-		<li><a href="partners.html">Partners</a></li>
+		<li><a href="history.php">History</a></li>
+		<li><a href="about.php">About</a></li>
+		<li><a href="partners.php">Partners</a></li>
 		<li><a href="members.php">Members</a></li>
-		<li><a href="restricted.php">Restricted</a></li>
-		<li class="money" ><a href="donate.html">Donate</a></li>
-		<li class="rightfloat" ><a href="login.php">Login</a></li>
-		<li class="rightfloat" ><a href="logout.php">Logout</a></li>
+		<li class="money" ><a href="donate.php">Donate</a></li>
+		<?php echo isset($_SESSION['user'])  
+			? '<li class="rightfloat"><a href="logout.php">Logout</a></li>'  
+			: '<li class="rightfloat"><a href="login.php">Login</a></li>' 
+		?>
 		<a href="javascript:void(0);" class="icon" onclick="navBurger()">
 		<i class="fa fa-bars"></i>
 		</a>

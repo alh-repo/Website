@@ -6,10 +6,10 @@
 <!DOCTYPE html>
 
 <!--
-// Author name: Adam Hennefer
-// Date created: 12.9.19
-// Last updated: 12.3.20 
-// File name: members.php 
+// Author name:  Adam Hennefer
+// Date created: 12.09.19
+// Last updated: 02.12.21 
+// File name:	 members.php 
 -->
 <html>
 
@@ -31,15 +31,16 @@
 
 	<ul>
 		<div class="topnav" id="myTopnav">
-		<li><a href="home.html">Home</a></li>
-		<li><a href="history.html">History</a></li>
-		<li><a href="about.html">About</a></li>
-		<li><a href="partners.html">Partners</a></li>
-		<li><a class="active" href="restricted.php">Members</a></li>
-		<li><a href="restricted.php">Restricted</a></li>
-		<li class="money" ><a href="donate.html">Donate</a></li>
-		<li class="rightfloat" ><a href="login.php">Login</a></li>
-		<li class="rightfloat" ><a href="logout.php">Logout</a></li>
+		<li><a href="home.php">Home</a></li>
+		<li><a href="history.php">History</a></li>
+		<li><a href="about.php">About</a></li>
+		<li><a href="partners.php">Partners</a></li>
+		<li class="active" ><a href="members.php">Members</a></li>
+		<li class="money" ><a href="donate.php">Donate</a></li>
+		<?php echo isset($_SESSION['user'])  
+			? '<li class="rightfloat"><a href="logout.php">Logout</a></li>'  
+			: '<li class="rightfloat"><a href="login.php">Login</a></li>' 
+		?>
 		<a href="javascript:void(0);" class="icon" onclick="navBurger()">
 		<i class="fa fa-bars"></i>
 		</a>

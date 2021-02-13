@@ -3,10 +3,10 @@
 ?>
 
 <!--
-// Author Name:  Adam Hennefer
-// Date Created: 12.8.19
-// Last Update: 2.10.21 
-// File: new_user_login.php 
+// Author name:  Adam Hennefer
+// Date created: 12.08.19
+// Last update:  02.12.21 
+// File name:    new_user_login.php 
 -->
 
 <!DOCTYPE html>
@@ -35,12 +35,12 @@
 	<!-- Internet Explorer & MS Edge do not support sticky nav bar -->
 	<ul>
 		<div class="topnav" id="myTopnav">
-		<li><a href="home.html">Home</a></li>
-		<li><a href="history.html">History</a></li>
-		<li><a href="about.html">About</a></li>
-		<li><a href="partners.html">Partners</a></li>
+		<li><a href="home.php">Home</a></li>
+		<li><a href="history.php">History</a></li>
+		<li><a href="about.php">About</a></li>
+		<li><a href="partners.php">Partners</a></li>
 		<li><a href="members.php">Members</a></li>
-		<li class="money" ><a href="donate.html">Donate</a></li>
+		<li class="money" ><a href="donate.php">Donate</a></li>
 		<a href="javascript:void(0);" class="icon" onclick="navBurger()">
 		<i class="fa fa-bars"></i>
 		</a>
