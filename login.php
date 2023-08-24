@@ -1,12 +1,15 @@
 <?php
   require_once("login_logic.php");
+  if(!isset($_SESSION)){
+    session_start();
+}
 ?>
 
 <!--
 // Author name:  Adam Hennefer
-// Date created: 12.8.19
-// Last updated: 12.3.20 
-// File name: login.php 
+// Date created: 12.08.19
+// Last updated: 02.12.21 
+// File name: 	 login.php 
 -->
 
 <!DOCTYPE html>
@@ -27,26 +30,31 @@
 		}
 		th, td {
 		  padding: 15px;
+		  width: 25%;
+		}
+		table{
+		  width: 33%;
 		}
 	</style>
 </head>
 
 <body>
 	<header> 	
-		<img src ="https://media.wired.com/photos/593320d858b0d64bb35d4655/master/w_3645,c_limit/163727876.jpg" class = "center1">	
+		<img src="https://media.wired.com/photos/593320d858b0d64bb35d4655/master/w_3645,c_limit/163727876.jpg" class = "center1">	
 	</header>
 	<!-- Internet Explorer & MS Edge do not support sticky nav bar -->
 	<ul>
 		<div class="topnav" id="myTopnav">
-		<li><a href="home.html">Home</a></li>
-		<li><a href="History.html">History</a></li>
-		<li><a href="about.html">About</a></li>
-		<li><a href="partners.html">Partners</a></li>
+		<li><a href="home.php">Home</a></li>
+		<li><a href="History.php">History</a></li>
+		<li><a href="about.php">About</a></li>
+		<li><a href="partners.php">Partners</a></li>
 		<li><a href="members.php">Members</a></li>
-		<li><a href="restricted.php">Restricted</a></li>
-		<li class="money"><a href="donate.html">Donate</a></li>
-		<li class="rightfloat" ><a href="logout.php">Logout</a></li>
-		<li class="activeRight"><a href="login.php">Login</a></li>
+		<li class="money"><a href="donate.php">Donate</a></li>
+		<?php echo isset($_SESSION['user'])  
+			? '<li class="rightfloat" ><a href="logout.php">Logout</a></li>'  
+			: '<li class="activeRight"><a href="login.php">Login</a></li>' 
+		?>
 		<a href="javascript:void(0);" class="icon" onclick="navBurger()">
 		<i class="fa fa-bars"></i>
 		</a>
@@ -54,10 +62,14 @@
 	</ul>
 	<data>
 		<h3><br><span id="grade">
-			<?php echo isset($email) ? "Welcome ".$full_name." You are logged in." : 'You must
-			login or sign up to access the Members page and the Restricted page content.'; ?>
+			<?php echo isset($email) ? 'Welcome '.$full_name.'!': ''; ?>
+			<?php if (isset($_SESSION['user'])){ 
+			echo ' You are logged in.'; }
+			else { echo 'You must
+			log in or sign up to access the Members page or the Restricted page content.'; ?>
 		</span><br></h3>
-		<h3><br>New Users:</h3>
+
+		<h3><br>Create Account:</h3>
 
 	<div id = "form" class="row">
 	<div id = "form" class="col-75">	
@@ -65,8 +77,9 @@
 		<form>
 		<table>
 		  <tr>
-			<td><label><i class="fa fa-user-plus"></i> Sign Up</label></td><td></td><td>
-				<button type="button" class=btn style="background-color:white" onclick="window.location.href='new_user_login.php'">Create Account</button></td>
+			<td><label><i class="fa fa-user-plus"></i> Sign Up</label></td><td>
+				<button type="button" class=btn style="background-color:white" 
+				onclick="window.location.href='new_user_login.php'">New User</button></td>
 		  </tr> 
 		</table>
 		</form>
@@ -74,7 +87,7 @@
 	</div>
 	</div>		
 	
-	<h3><br>Existing Users:</h3>
+	<h3><br>Log In:</h3>
 	<div id = "form" class="row">
 	<div id = "form" class="col-75">	
 	<div class="container">
@@ -100,7 +113,7 @@
 		?>
 	  </tr>
 	  <tr>
-		<td></td><td><input type="submit" name="submit" class=btn value="Submit" style="background-color:white"></td>
+		<td></td><td><input type="submit" name="submit" class=btn value="Login" style="background-color:white"></td>
 	  </tr>
 	  </table>
 	</form>
@@ -111,6 +124,9 @@
 	  if ($debug) {
 		echo "FullName = $full_name, Password = $password";
 	  }	  
+	?>
+	<?php
+		}
 	?>
 		<script>
 			/* nav bar menu burger */
