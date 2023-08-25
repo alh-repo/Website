@@ -96,7 +96,7 @@ td {
 footer {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 13px;
-	margin: 70px;
+	margin: 70px 0px 70px 0px;
 	text-align: center;
 	clear: both;
 	line-height: 100%;
