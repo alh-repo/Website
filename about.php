@@ -7,7 +7,7 @@
 <!--
 // Author name:  Adam Hennefer
 // Date created: 09.25.19 
-// Last updated: 08.29.23
+// Last updated: 09.07.23
 // File name: 	 about.php 
 -->
 
@@ -26,8 +26,10 @@
 </head>
 
 <body>
-	<header> 
-		<img src ="images/my_name_is.png" class = "center1">	
+	<header class="aboutHeader"> 
+		<div style="font-weight: bolder; height: 12rem; line-height: 12rem; font-size: 12vh;" >Hello</div>
+		<div style="font-size: 3vh" >my name is</div>
+		<div style="background-color: white; color: black; font-family: cursive; line-height: 8rem; font-size: 8vh;">Adam</div>
 	</header>
 	<!-- Internet Explorer & MS Edge do not support sticky nav bar -->
 	<ul>

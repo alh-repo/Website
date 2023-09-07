@@ -160,6 +160,17 @@ footer {
 	color:  #0099cc;
 	content: "print";
 }
+.aboutHeader{
+	text-align: center;
+    height: 25rem;
+    font-size: 6vh;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    background-color: #ff0000;
+    margin-bottom: 0.5rem;
+	color:	#f2f2f2;
+	border: solid #333;
+	
+}
 * {
 	box-sizing: border-box;
 }
