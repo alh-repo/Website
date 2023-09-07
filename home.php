@@ -7,7 +7,7 @@
 <!--
 // Author name:  Adam L. Hennefer
 // Date created: 09.25.19 
-// Last updated: 08.29.23
+// Last updated: 09.06.23
 // File name: 	 home.php
 -->
 
@@ -24,8 +24,8 @@
 </head>
 
 <body>
-	<header> 	
-		<img src ="https://cdn-images-1.medium.com/max/1600/1*CaeO7W9pk_4OHG_7nf4-ZA.png " class = "center1">	
+	<header class="centerHomeHeader"> 	
+		(<span style="color: #ff0000;">"Hello World!"</span>)
 	</header>
 	<!-- Internet Explorer & MS Edge do not support sticky nav bar -->
 	<ul>
@@ -47,7 +47,7 @@
 	</ul>
 	<br>
 	<data>
-		<p>Welcome to My Computer Science Web Site.  I developed this project  
+		<p>Welcome to My Computer Science Web Site.  I began this project  
 			while enrolled at California State University East Bay.  
 			It exhibits many common website features.  These features are 
 			briefly summarize within the accordian presented below.  

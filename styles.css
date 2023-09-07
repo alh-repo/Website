@@ -10,7 +10,9 @@ body {
 data {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 20px;
+	/*
 	margin: 70px;
+	*/
 }
 
 div.a {
@@ -90,7 +92,7 @@ header {
 
 td {
   padding: 25px;
-  font-size: 33px;
+  font-size: 17px;
 }
 
 footer {
@@ -143,7 +145,21 @@ footer {
     z-index: -1;
 	*/
 }
-
+.centerHomeHeader{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25rem;
+    font-size: 6vw;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    background-color: #333;
+    margin-bottom: 0.5rem;
+	color:	#f2f2f2;
+	
+}.centerHomeHeader:before{
+	color:  #0099cc;
+	content: "print";
+}
 * {
 	box-sizing: border-box;
 }
