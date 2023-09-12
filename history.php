@@ -7,7 +7,7 @@
 <!--
 // Author name:  Adam Hennefer
 // Date created: 09.25.19 
-// Last updated: 08.29.23
+// Last updated: 09.12.23
 // File name: 	 history.php
 -->
  
@@ -124,8 +124,61 @@
 </head>
 
 <body>
-	<header>
-		<img src ="images/history.jpg" class = "center1"> 
+	<header class="historyHeader">
+		<canvas id="c" style="height: 400px; width: 100%;"> </canvas>
+		<div class="historyHeaderText">
+			<div style="color:  #0099cc;">HISTORY </div>
+			<div>OF </div>
+			<div style="color:  #0099cc;">COMPUTERS </div>
+		</div>
+		<script>
+			var c = document.getElementById("c");
+			var ctx = c.getContext("2d");
+
+			//binary string 
+			var binary = "0101";
+			//converting the string into an array of single characters
+			binary = binary.split("");
+
+			var font_size = 10;
+			var columns = c.width/font_size; //number of columns for the rain
+			//an array of drops - one per column
+			var drops = [];
+			//x below is the x coordinate
+			//1 = y co-ordinate of the drop(same for every drop initially)
+			for(var x = 0; x < columns; x++)
+				drops[x] = 1; 
+
+			//drawing the characters
+			function draw()
+			{
+				//Black background for the canvas
+				//translucent background to show trail
+				ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+				ctx.fillRect(0, 0, c.width, c.height);
+				
+				ctx.fillStyle = "white"; 
+				ctx.font = font_size + "px arial";
+				//looping over drops
+				for(var i = 0; i < drops.length; i++)
+				{
+					//a random binary character to print
+					var text = binary[Math.floor(Math.random()*binary.length)];
+					//x = i*font_size, y = value of drops[i]*font_size
+					ctx.fillText(text, i*font_size, drops[i]*font_size);
+					
+					//sending the drop back to the top randomly after it has crossed the screen
+					//adding a randomness to the reset to make the drops scattered on the Y axis
+					if(drops[i]*font_size > c.height && Math.random() > 0.975)
+						drops[i] = 0;
+					
+					//incrementing Y coordinate
+					drops[i]++;
+				}
+			}
+			
+			setInterval(draw, 35);
+		</script>
 	</header>
 	<ul>
 		<div class="topnav" id="myTopnav">
