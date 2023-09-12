@@ -7,7 +7,7 @@
 <!--
 // Author name:  Adam Hennefer
 // Date created: 10.17.19 
-// Last updated: 08.29.23
+// Last updated: 09.12.23
 // File name: 	 partners.php
 -->
  
@@ -26,8 +26,9 @@
 </head>
 
 <body>
-	<header>
-		<img src = "images/teamwork.jpg" class = "center1" >
+	<header style="	text-align: center;">
+		<div style="font-weight: bolder; line-height: 12rem; font-size: 12vw;" >TEAMWORK</div>
+		<div style="color: black; line-height: 8rem; font-size: 6vw;">MAKES THE DREAM WORK!</div>
 	</header>
 
 	<ul>
@@ -49,7 +50,7 @@
 	</ul>
 	
 	<data>
-		<p>It might seem obvious but dreams and goals don't just happen.  It takes a team of support.  
+		<p>It might seem obvious but dreams and goals don't just happen.  It takes hard work and a team of support.  
 		This is a place for me to thank those that helped me reach some of mine.  
 		Please double click image for a special message.</p><br>
 		<div id="secret" class="center2">
