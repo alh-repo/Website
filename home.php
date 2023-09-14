@@ -7,7 +7,7 @@
 <!--
 // Author name:  Adam L. Hennefer
 // Date created: 09.25.19 
-// Last updated: 09.06.23
+// Last updated: 09.14.23
 // File name: 	 home.php
 -->
 
@@ -27,7 +27,7 @@
 	<header class="centerHomeHeader"> 	
 		(<span style="color: #ff0000;">"Hello World!"</span>)
 	</header>
-	<!-- Internet Explorer & MS Edge do not support sticky nav bar -->
+	<!-- Internet Explorer does not support sticky nav bar -->
 	<ul>
 		<div class="topnav" id="myTopnav">
 		<li><a class="active" href="#home">Home</a></li>
@@ -58,7 +58,7 @@
 		<div class="panel">
 			<ol style="list-style-type:disc;">	
 			<li>A horizontal navigation bar with links allow the users to traverse the web pages of this site.</li><br>
-			<li>The navigation bar should persist at the top of each page when scrolling - Internet Explorer & MS Edge may not support this feature.</li><br>
+			<li>The navigation bar should persist at the top of each page when scrolling - Internet Explorer may not support this feature.</li><br>
 			<li>A menu burger icon should replace the list items within the navigation bar when the view is reduced for better mobile formatting.</li><br>
 			<li>The dynamic navigation bar and the accordian recieve their functionality from JavaScript. </li><br>
 		</ol>
@@ -68,9 +68,8 @@
 		<div class="panel">
 			<ol style="list-style-type:disc;">
 			<li>The History page features a slideshow.</li><br>
-			<li>The images are gathered in an HTML container and use a decent amount of CSS to make them fade during transitions.</li><br>
+			<li>The images are gathered in an HTML container and use CSS to make them fade during transitions.</li><br>
 			<li>The functionality to change images comes from JavaScript.</li><br>
-			<li>The images were compiled just for demonstation purposes.</li><br>
 			</ol>
 		</div>
 
