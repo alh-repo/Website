@@ -6,6 +6,6 @@
 			<td><a href="mailto:ahennefer3@horizon.csueastbay.edu"><i class="fa fa-envelope"></i></a></td>	
 			</tr>
 		</table>	
-		<p>This website and the information found within was created for educational purposes only.</p>
-		<p>Authored by: Adam Hennefer</p>';
+		<p>&copy; MYCSWS 2023 - All Rights Reserved.</p>
+		<p>Created by: Adam Hennefer</p>';
 ?>
