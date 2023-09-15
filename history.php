@@ -7,7 +7,7 @@
 <!--
 // Author name:  Adam Hennefer
 // Date created: 09.25.19 
-// Last updated: 09.12.23
+// Last updated: 09.15.23
 // File name: 	 history.php
 -->
  
@@ -312,6 +312,51 @@
 			  }
 			}
 		</script>
+		<pre style="white-space: pre-wrap;">
+The history of computers is a fascinating journey that spans centuries, marked by significant technological advancements and innovations. Here's a concise overview of the key milestones in the evolution of computers:
+
+Abacus (c. 3000 BC - 1600 AD):
+The earliest known calculating tool was the abacus, used by civilizations like the Sumerians and Chinese
+
+Mechanical Calculators (17th - 19th Century):
+The 17th century saw the invention of mechanical calculators, such as Blaise Pascal's Pascaline (1642) and Gottfried Wilhelm Leibniz's stepped reckoner (1673).
+
+Analytical Engine (1837):
+Designed by Charles Babbage, the Analytical Engine is considered the first general-purpose mechanical computer. Although it was never built during Babbage's lifetime, its design laid the groundwork for modern computing concepts.
+
+Tabulating Machines (Late 19th - Early 20th Century):
+Herman Hollerith's tabulating machines, developed for the U.S. Census Bureau in the late 1800s, used punched cards to automate data processing, marking a crucial step toward modern computing.
+
+Electronic Computers (1930s - 1940s):
+The 1930s and 1940s witnessed the development of electronic computers, including Konrad Zuse's Z3 in Germany and Alan Turing's theoretical Turing Machine. The Colossus, built during World War II, is often considered the first programmable electronic computer.
+
+ENIAC (1945):
+The Electronic Numerical Integrator and Computer (ENIAC), built at the University of Pennsylvania, is often regarded as the world's first general-purpose electronic digital computer.
+
+Transistors (1947):
+The invention of the transistor at Bell Labs by John Bardeen, Walter Brattain, and William Shockley revolutionized computing by making computers smaller, more reliable, and more energy-efficient.
+
+Integrated Circuits (1960s):
+The development of integrated circuits, or microchips, allowed multiple transistors and electronic components to be fabricated on a single silicon chip, paving the way for smaller and more powerful computers.
+
+Personal Computers (1970s - 1980s):
+Companies like Apple, IBM, and Microsoft played pivotal roles in popularizing personal computers. The release of the Apple II (1977) and IBM PC (1981) marked significant milestones in this era.
+
+The Internet (1960s - 1980s):
+The ARPANET, a precursor to the modern internet, was established in the late 1960s. The World Wide Web, created by Tim Berners-Lee in 1989, revolutionized communication and information sharing.
+
+Mobile Computing (Late 20th Century - Present):
+The development of portable devices, from laptops to smartphones and tablets, has transformed the way we access and interact with information.
+
+Artificial Intelligence (20th Century - Present):
+Advancements in machine learning and AI have allowed computers to perform tasks once thought to be exclusive to humans, such as natural language processing and image recognition.
+
+Quantum Computing (21st Century):
+Quantum computers, still in their infancy, have the potential to solve complex problems exponentially faster than classical computers by harnessing the principles of quantum mechanics.
+
+The history of computers is an ongoing narrative of innovation and progress, with each generation of technology building upon the achievements of the past, continually shaping the way we live, work, and communicate in the digital age.
+
+		</pre>
 	</data>
 	
 	<footer>
