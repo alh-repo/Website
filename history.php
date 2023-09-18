@@ -7,7 +7,7 @@
 <!--
 // Author name:  Adam Hennefer
 // Date created: 09.25.19 
-// Last updated: 09.15.23
+// Last updated: 09.18.23
 // File name: 	 history.php
 -->
  
@@ -199,7 +199,8 @@
 	</ul>
 	<data>	
 		<div>
-		<P>A visual history of computers:
+		<P>
+		The history of computers is a fascinating journey that spans centuries, marked by significant technological advancements and innovations. Here's a concise overview of the key milestones in the evolution of computers:
 		</P>
 		</div>
 		 <!-- Slideshow container -->
@@ -221,7 +222,7 @@
 		  <div class="mySlides fade">
 			<div class="numbertext">3 / 8</div>
 			<img src="images\ENIAC.jpg" style="width:100%">
-			<div class="text">ENIAC 1946</div>
+			<div class="text">ENIAC 1945</div>
 		  </div>
 
 		  <div class="mySlides fade">
@@ -232,8 +233,8 @@
 		  
 		  <div class="mySlides fade">
 			<div class="numbertext">5 / 8</div>
-			<img src="images\mac128.jpg" style="width:100%">
-			<div class="text" >Macintosh 128 Personal Computer 1984 </div>
+			<img src="images\Ibm_pc.jpg" style="width:100%">
+			<div class="text" >IBM Personal Computer 1981 </div>
 		  </div>
 
 		  <div class="mySlides fade">
@@ -313,47 +314,40 @@
 			}
 		</script>
 		<pre style='white-space: pre-wrap; font-family: "Lucida Sans Unicode", "Lucida Grande", "sans-serif;"'>
-The history of computers is a fascinating journey that spans centuries, marked by significant technological advancements and innovations. Here's a concise overview of the key milestones in the evolution of computers:
 
-<span style="font-weight: bold;">Abacus (c. 3000 BC - 1600 AD):</span>
-The earliest known calculating tool was the abacus, used by civilizations like the Sumerians and Chinese
+<span style="font-weight: bold;">Turing Machine (1936):</span>
+The Turing machine, conceived by British mathematician and computer scientist Alan Turing in 1936, laid the theoretical foundation for modern computing and revolutionized our understanding of computation, algorithms, and the limits of what can be computed.  A Turing machine is a theoretical mathematical model that represents a simple but powerful abstract computational device capable of simulating any algorithmic process by manipulating symbols on an infinite tape according to a set of predefined rules.
 
-<span style="font-weight: bold;">Mechanical Calculators (17th - 19th Century):</span>
-The 17th century saw the invention of mechanical calculators, such as Blaise Pascal's Pascaline (1642) and Gottfried Wilhelm Leibniz's stepped reckoner (1673).
-
-<span style="font-weight: bold;">Analytical Engine (1837):</span>
-Designed by Charles Babbage, the Analytical Engine is considered the first general-purpose mechanical computer. Although it was never built during Babbage's lifetime, its design laid the groundwork for modern computing concepts.
-
-<span style="font-weight: bold;">Tabulating Machines (Late 19th - Early 20th Century):</span>
-Herman Hollerith's tabulating machines, developed for the U.S. Census Bureau in the late 1800s, used punched cards to automate data processing, marking a crucial step toward modern computing.
-
-<span style="font-weight: bold;">Electronic Computers (1930s - 1940s):</span>
-The 1930s and 1940s witnessed the development of electronic computers, including Konrad Zuse's Z3 in Germany and Alan Turing's theoretical Turing Machine. The Colossus, built during World War II, is often considered the first programmable electronic computer.
+<span style="font-weight: bold;">Turing Bombe Project (1940):</span>
+The Turing Bombe Project was a top-secret British codebreaking effort during World War II, led by the brilliant mathematician and computer scientist Alan Turing. The project's main objective was to decrypt encrypted German messages encoded using the Enigma machine, a highly sophisticated encryption device used by the German military.
 
 <span style="font-weight: bold;">ENIAC (1945):</span>
-The Electronic Numerical Integrator and Computer (ENIAC), built at the University of Pennsylvania, is often regarded as the world's first general-purpose electronic digital computer.
-
-<span style="font-weight: bold;">Transistors (1947):</span>
+The Electronic Numerical Integrator and Computer (ENIAC) was the world's first general-purpose electronic digital computer, developed during World War II in the United States by John Presper Eckert and John Mauchly, and it became operational in 1945.
+<!--<span style="font-weight: bold;">Transistors (1947):</span>
 The invention of the transistor at Bell Labs by John Bardeen, Walter Brattain, and William Shockley revolutionized computing by making computers smaller, more reliable, and more energy-efficient.
 
 <span style="font-weight: bold;">Integrated Circuits (1960s):</span>
 The development of integrated circuits, or microchips, allowed multiple transistors and electronic components to be fabricated on a single silicon chip, paving the way for smaller and more powerful computers.
+-->
+<span style="font-weight: bold;">Mainframe Computers (1950s):</span>
+Mainframe computers have been pivotal in the history of computing serving as high-performance, centralized computing systems known for their reliability, scalability, and ability to handle extensive data processing for organizations and enterprises.
 
 <span style="font-weight: bold;">Personal Computers (1970s - 1980s):</span>
-Companies like Apple, IBM, and Microsoft played pivotal roles in popularizing personal computers. The release of the Apple II (1977) and IBM PC (1981) marked significant milestones in this era.
+Companies like Apple, IBM, and Microsoft played pivotal roles in popularizing personal computers. The IBM PC is a landmark in the history of personal computing, setting industry standards and establishing the dominance of the x86 architecture, ultimately shaping the modern PC as we know it today.
 
-<span style="font-weight: bold;">The Internet (1960s - 1980s):</span>
-The ARPANET, a precursor to the modern internet, was established in the late 1960s. The World Wide Web, created by Tim Berners-Lee in 1989, revolutionized communication and information sharing.
+<span style="font-weight: bold;">Cloud Computing (1990s):</span>
+Cloud computing is a technology paradigm that involves delivering scalable, on-demand computing resources over the internet for businesses and individuals worldwide.
 
-<span style="font-weight: bold;">Mobile Computing (Late 20th Century - Present):</span>
+<span style="font-weight: bold;">Mobile Computing (Late 20th Century):</span>
 The development of portable devices, from laptops to smartphones and tablets, has transformed the way we access and interact with information.
-
+<!--
 <span style="font-weight: bold;">Artificial Intelligence (20th Century - Present):</span>
 Advancements in machine learning and AI have allowed computers to perform tasks once thought to be exclusive to humans, such as natural language processing and image recognition.
-
+-->
 <span style="font-weight: bold;">Quantum Computing (21st Century):</span>
 Quantum computers, still in their infancy, have the potential to solve complex problems exponentially faster than classical computers by harnessing the principles of quantum mechanics.
 
+<hr>
 The history of computers is an ongoing narrative of innovation and progress, with each generation of technology building upon the achievements of the past, continually shaping the way we live, work, and communicate in the digital age.
 
 		</pre>
