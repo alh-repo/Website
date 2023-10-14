@@ -7,7 +7,7 @@
 <!--
 // Author name:  Adam Hennefer
 // Date created: 09.25.19 
-// Last updated: 09.07.23
+// Last updated: 10.14.23
 // File name: 	 about.php 
 -->
 
@@ -56,7 +56,7 @@
 		and development skills.   I am motivated by challenges and believe hard work brings good luck.  
 		In my free time I like to hang out with my family, play the guitar or write some code. </p>
 		<div>
-			<video style="display:block; margin: 0 auto;" width="300" controls="controls" id=video>
+			<video style="display:block; margin: 0 auto; filter: drop-shadow(0 0 30px #333);" width="300" controls="controls" id=video >
 		<!--	<video width="auto" height="100" class = "center2" controls> -->
 				<source src="images/hello_adam.mp4" type="video/mp4">
 				Your browser does not support the video tag.
