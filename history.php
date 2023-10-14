@@ -7,7 +7,7 @@
 <!--
 // Author name:  Adam Hennefer
 // Date created: 09.25.19 
-// Last updated: 09.18.23
+// Last updated: 10.14.23
 // File name: 	 history.php
 -->
  
@@ -200,7 +200,9 @@
 	<data>	
 		<div>
 		<P>
-		The history of computers is a fascinating journey that spans centuries, marked by significant technological advancements and innovations. Here's a concise overview of the key milestones in the evolution of computers:
+		The history of computers is an ongoing narrative of innovation and progress, with each generation of technology building upon the achievements of the past, continually shaping the way we live, work, and communicate in the digital age.
+
+
 		</P>
 		</div>
 		 <!-- Slideshow container -->
@@ -348,7 +350,6 @@ Advancements in machine learning and AI have allowed computers to perform tasks 
 Quantum computers, still in their infancy, have the potential to solve complex problems exponentially faster than classical computers by harnessing the principles of quantum mechanics.
 
 <hr>
-The history of computers is an ongoing narrative of innovation and progress, with each generation of technology building upon the achievements of the past, continually shaping the way we live, work, and communicate in the digital age.
 
 		</pre>
 	</data>
