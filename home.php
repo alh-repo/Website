@@ -7,7 +7,7 @@
 <!--
 // Author name:  Adam L. Hennefer
 // Date created: 09.25.19 
-// Last updated: 09.14.23
+// Last updated: 10.18.23
 // File name: 	 home.php
 -->
 
@@ -47,18 +47,18 @@
 	</ul>
 	<br>
 	<data>
-		<p>Welcome to My Computer Science Web Site.  I began this project  
+		<p>Welcome to My Computer Science Web Site.  I started this project  
 			while enrolled at California State University East Bay.  
 			It exhibits many common website features.  These features are 
 			briefly summarize within the accordian presented below.  
 		</p>
 		<br>
-		<p><strong>Website Features - Technical Jargon:</strong></p>
+		<p><strong>Website Features - Technical Overview:</strong></p>
 		<button class="accordion">Home Page</button>
 		<div class="panel">
 			<ol style="list-style-type:disc;">	
 			<li>A horizontal navigation bar with links allow the users to traverse the web pages of this site.</li><br>
-			<li>The navigation bar should persist at the top of each page when scrolling - Internet Explorer may not support this feature.</li><br>
+			<li>The navigation bar should persist at the top of each page when scrolling.</li><br>
 			<li>A menu burger icon should replace the list items within the navigation bar when the view is reduced for better mobile formatting.</li><br>
 			<li>The dynamic navigation bar and the accordian recieve their functionality from JavaScript. </li><br>
 		</ol>
@@ -68,7 +68,7 @@
 		<div class="panel">
 			<ol style="list-style-type:disc;">
 			<li>The History page features a slideshow.</li><br>
-			<li>The images are gathered in an HTML container and use CSS to make them fade during transitions.</li><br>
+			<li>The images are gathered in an HTML container and use CSS to fade during transitions.</li><br>
 			<li>The functionality to change images comes from JavaScript.</li><br>
 			</ol>
 		</div>
@@ -89,7 +89,7 @@
 		  <li>This page runs a script when the gif is double clicked.</li><br>
 		  <li>The script utilizes AJAX (via an XMLHttpRequest object) to access text that is stored in a file.</li><br>
 		  <li>The plain text file is then printed to the web page one character at a time to mimic a typewriter.</li><br>
-		  <li>The script sends its output text to an innerHTML content dividing element which is empty.</li><br>
+		  <li>The script sends its output text to an innerHTML content dividing element which is initially empty.</li><br>
 		  </ol>	
 		</div>
 				
@@ -109,7 +109,7 @@
 		<div class="panel">
 		  <ol style="list-style-type:disc;">
 		  <li>The Donate page exhibits a standard billing form.</li><br>
-		  <li>Input validation on the client side is provided with HTML5 and JavaScript.  The server side is writen with PHP.</li><br>
+		  <li>Input validation on the client side is provided with HTML5 and JavaScript.  The server side validation is handled with PHP.</li><br>
 		  <li>Valid input is logged into a CSV file titled "log_[date]" and the user is returned a thank you message with the yearly donation sum.</li><br>
 		  <li>Invalid input is logged into a CSV file titled "error_log_[date]" and the user is returned an error message.</li><br>
 		  <li>To prevent files from growing too large, a new file is created for each new day.</li><br>		
