@@ -7,7 +7,7 @@
 <!--
 // Author name:  Adam Hennefer
 // Date created: 09.25.19 
-// Last updated: 10.14.23
+// Last updated: 10.23.23
 // File name: 	 history.php
 -->
  
@@ -34,7 +34,7 @@
 }
 
 /* Hide the images by default */
-.mySlides {
+.mySlides, .summary{
   display: none;
 }
 
@@ -78,7 +78,7 @@
  
 }
 
-/* Number text (1/3 etc) */
+/* Number text (1/8 etc) */
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
@@ -274,6 +274,59 @@
 		  <span class="dot" onclick="currentSlide(7)"></span>
 		  <span class="dot" onclick="currentSlide(8)"></span>
 		</div>
+<div class="summary-container" style='font-family: "Lucida Sans Unicode", "Lucida Grande", "sans-serif;"'>		
+		<br>
+<div class="summary">
+<span style="font-weight: bold;">Turing Machine (1936):</span>
+The Turing machine, conceived by British mathematician and computer scientist Alan Turing in 1936, laid the theoretical foundation for modern computing and revolutionized our understanding of computation, algorithms, and the limits of what can be computed.  A Turing machine is a theoretical mathematical model that represents a simple but powerful abstract computational device capable of simulating any algorithmic process by manipulating symbols on an infinite tape according to a set of predefined rules.
+</div>
+<div class="summary">
+<span style="font-weight: bold;">Turing Bombe Project (1940):</span>
+The Turing Bombe Project was a top-secret British codebreaking effort during World War II, led by the brilliant mathematician and computer scientist Alan Turing. The project's main objective was to decrypt encrypted German messages encoded using the Enigma machine, a highly sophisticated encryption device used by the German military.
+</div>
+
+<div class="summary">
+<span style="font-weight: bold;">ENIAC (1945):</span>
+The Electronic Numerical Integrator and Computer (ENIAC) was the world's first general-purpose electronic digital computer, developed during World War II in the United States by John Presper Eckert and John Mauchly, and it became operational in 1945.
+<!--<span style="font-weight: bold;">Transistors (1947):</span>
+The invention of the transistor at Bell Labs by John Bardeen, Walter Brattain, and William Shockley revolutionized computing by making computers smaller, more reliable, and more energy-efficient.
+
+<span style="font-weight: bold;">Integrated Circuits (1960s):</span>
+The development of integrated circuits, or microchips, allowed multiple transistors and electronic components to be fabricated on a single silicon chip, paving the way for smaller and more powerful computers.
+-->
+</div>
+
+<div class="summary">
+<span style="font-weight: bold;">Mainframe Computers (1950s):</span>
+Mainframe computers have been pivotal in the history of computing serving as high-performance, centralized computing systems known for their reliability, scalability, and ability to handle extensive data processing for organizations and enterprises.
+</div>
+
+<div class="summary">
+<span style="font-weight: bold;">Personal Computers (1970s - 1980s):</span>
+Companies like Apple, IBM, and Microsoft played pivotal roles in popularizing personal computers. The IBM PC is a landmark in the history of personal computing, setting industry standards and establishing the dominance of the x86 architecture, ultimately shaping the modern PC as we know it today.
+</div>
+
+<div class="summary">
+<span style="font-weight: bold;">Cloud Computing (1990s):</span>
+Cloud computing is a technology paradigm that involves delivering scalable, on-demand computing resources over the internet for businesses and individuals worldwide.
+</div>
+
+<div class="summary">
+<span style="font-weight: bold;">Mobile Computing (Late 20th Century):</span>
+The development of portable devices, from laptops to smartphones and tablets, has transformed the way we access and interact with information.
+<!--
+<span style="font-weight: bold;">Artificial Intelligence (20th Century - Present):</span>
+Advancements in machine learning and AI have allowed computers to perform tasks once thought to be exclusive to humans, such as natural language processing and image recognition.
+-->
+</div>
+
+<div class="summary">
+<span style="font-weight: bold;">Quantum Computing (21st Century):</span>
+Quantum computers, still in their infancy, have the potential to solve complex problems exponentially faster than classical computers by harnessing the principles of quantum mechanics.
+</div>
+
+</div>
+		
 		<script>
 			var slideIndex = 1;
 			showSlides(slideIndex);
@@ -292,15 +345,20 @@
 			  var i;
 			  var slides = document.getElementsByClassName("mySlides");
 			  var dots = document.getElementsByClassName("dot");
+			  var text = document.getElementsByClassName("summary");
+			  //console.log("slides", slides);
+			  //console.log("text", text);
 			  if (n > slides.length) {slideIndex = 1}
 			  if (n < 1) {slideIndex = slides.length}
 			  for (i = 0; i < slides.length; i++) {
 				  slides[i].style.display = "none";
+				  text[i].style.display = "none";
 			  }
 			  for (i = 0; i < dots.length; i++) {
 				  dots[i].className = dots[i].className.replace(" activate", "");
 			  }
 			  slides[slideIndex-1].style.display = "block";
+			  text[slideIndex-1].style.display = "block";
 			  dots[slideIndex-1].className += " activate";
 			}
 			/* nav bar menu burger */
@@ -315,43 +373,7 @@
 			  }
 			}
 		</script>
-		<pre style='white-space: pre-wrap; font-family: "Lucida Sans Unicode", "Lucida Grande", "sans-serif;"'>
-
-<span style="font-weight: bold;">Turing Machine (1936):</span>
-The Turing machine, conceived by British mathematician and computer scientist Alan Turing in 1936, laid the theoretical foundation for modern computing and revolutionized our understanding of computation, algorithms, and the limits of what can be computed.  A Turing machine is a theoretical mathematical model that represents a simple but powerful abstract computational device capable of simulating any algorithmic process by manipulating symbols on an infinite tape according to a set of predefined rules.
-
-<span style="font-weight: bold;">Turing Bombe Project (1940):</span>
-The Turing Bombe Project was a top-secret British codebreaking effort during World War II, led by the brilliant mathematician and computer scientist Alan Turing. The project's main objective was to decrypt encrypted German messages encoded using the Enigma machine, a highly sophisticated encryption device used by the German military.
-
-<span style="font-weight: bold;">ENIAC (1945):</span>
-The Electronic Numerical Integrator and Computer (ENIAC) was the world's first general-purpose electronic digital computer, developed during World War II in the United States by John Presper Eckert and John Mauchly, and it became operational in 1945.
-<!--<span style="font-weight: bold;">Transistors (1947):</span>
-The invention of the transistor at Bell Labs by John Bardeen, Walter Brattain, and William Shockley revolutionized computing by making computers smaller, more reliable, and more energy-efficient.
-
-<span style="font-weight: bold;">Integrated Circuits (1960s):</span>
-The development of integrated circuits, or microchips, allowed multiple transistors and electronic components to be fabricated on a single silicon chip, paving the way for smaller and more powerful computers.
--->
-<span style="font-weight: bold;">Mainframe Computers (1950s):</span>
-Mainframe computers have been pivotal in the history of computing serving as high-performance, centralized computing systems known for their reliability, scalability, and ability to handle extensive data processing for organizations and enterprises.
-
-<span style="font-weight: bold;">Personal Computers (1970s - 1980s):</span>
-Companies like Apple, IBM, and Microsoft played pivotal roles in popularizing personal computers. The IBM PC is a landmark in the history of personal computing, setting industry standards and establishing the dominance of the x86 architecture, ultimately shaping the modern PC as we know it today.
-
-<span style="font-weight: bold;">Cloud Computing (1990s):</span>
-Cloud computing is a technology paradigm that involves delivering scalable, on-demand computing resources over the internet for businesses and individuals worldwide.
-
-<span style="font-weight: bold;">Mobile Computing (Late 20th Century):</span>
-The development of portable devices, from laptops to smartphones and tablets, has transformed the way we access and interact with information.
-<!--
-<span style="font-weight: bold;">Artificial Intelligence (20th Century - Present):</span>
-Advancements in machine learning and AI have allowed computers to perform tasks once thought to be exclusive to humans, such as natural language processing and image recognition.
--->
-<span style="font-weight: bold;">Quantum Computing (21st Century):</span>
-Quantum computers, still in their infancy, have the potential to solve complex problems exponentially faster than classical computers by harnessing the principles of quantum mechanics.
-
-<hr>
-
-		</pre>
+		
 	</data>
 	
 	<footer>
