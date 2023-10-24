@@ -7,7 +7,7 @@
 <!--
 // Author name:  Adam Hennefer
 // Date created: 09.25.19 
-// Last updated: 10.23.23
+// Last updated: 10.24.23
 // File name: 	 history.php
 -->
  
@@ -346,8 +346,7 @@ Quantum computers, still in their infancy, have the potential to solve complex p
 			  var slides = document.getElementsByClassName("mySlides");
 			  var dots = document.getElementsByClassName("dot");
 			  var text = document.getElementsByClassName("summary");
-			  //console.log("slides", slides);
-			  //console.log("text", text);
+			  
 			  if (n > slides.length) {slideIndex = 1}
 			  if (n < 1) {slideIndex = slides.length}
 			  for (i = 0; i < slides.length; i++) {
