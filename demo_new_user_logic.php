@@ -2,7 +2,7 @@
 /*
  * Name:  Adam Hennefer
  * Date create: 11.15.19
- * Last update: 6.29.20
+ * Last update: 10.31.23
  * File: new_user_logic.php
  * This file connects to the database and creates new entry for a new user.
  * It also creates a session for the new user and sends an email confirmation.
@@ -50,12 +50,13 @@
 		
 		//send email - using xampp sendmail method.	
 		$to = $email;
-		$subject = "Welcome to MyCSSite.";
-		$txt = "Hello ".$full_name." Welcome to MyCSSite. "." Thank you for joining!"."\r\n".
-			"Your username is: ".$full_name."\r\n".
-			"Your password is: ".$password."\r\n". 
-			"- We are still under construction.  So please pardon the dust.";
-		$headers = "From: adam.hennefer@gmail.com" . "\r\n" ;
+		$subject = "Welcome to MyCSSite!";
+		$txt = "Hello ".$full_name.","."\r\n\n".
+			"Thank you for creating a new account."."\r\n\n".
+			"Your username is:  ".$full_name."\r\n".
+			"Your password is:  ".$password."\r\n\n". 
+			"Save this email to record your login credentials and please come back soon to see our updates."."\r\n";
+		$headers = "From: mycsws.mycssite@gmail.com" . "\r\n" ;
 		//"CC: somebodyelse@example.com";
 		//echo("$to = ". $email);
 		mail($to,$subject,$txt,$headers);		
