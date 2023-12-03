@@ -55,7 +55,7 @@
 			"Thank you for creating a new account."."\r\n\n".
 			"Your username is:  ".$full_name."\r\n".
 			"Your password is:  ".$password."\r\n\n". 
-			"Save this email to record your login credentials and please come back soon to see our updates."."\r\n\n".
+			"Please save this email to remember your login credentials."."\r\n\n".
 			"All the best,"."\r\n".
 			"Adam Hennefer"."\r\n";
 		$headers = "From: mycsws.mycssite@gmail.com" . "\r\n" ;
